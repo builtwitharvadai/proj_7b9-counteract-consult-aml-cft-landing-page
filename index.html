@@ -286,7 +286,7 @@
       </div>
     </section>
 
-    <section id="contact" class="contact" aria-labelledby="contact-heading">
+    <section id="contact" class="contact contact-section" aria-labelledby="contact-heading">
       <div class="container contact-inner">
         <div class="contact-copy">
           <p class="eyebrow">Get in touch</p>
@@ -297,27 +297,27 @@
           </p>
         </div>
 
-        <form class="contact-form" action="#" method="post" aria-labelledby="contact-heading" novalidate>
-          <div class="field">
-            <label for="contact-name">Name <span aria-label="required">*</span></label>
-            <input type="text" id="contact-name" name="name" required autocomplete="name" aria-invalid="false">
+        <form id="contact-form" class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" aria-labelledby="contact-heading" novalidate>
+          <div class="form-group">
+            <label for="name">Name <span aria-label="required">*</span></label>
+            <input type="text" id="name" name="name" required aria-required="true" autocomplete="name" aria-invalid="false">
           </div>
-          <div class="field">
-            <label for="contact-email">Email <span aria-label="required">*</span></label>
-            <input type="email" id="contact-email" name="email" required autocomplete="email" inputmode="email" aria-invalid="false">
+          <div class="form-group">
+            <label for="email">Email <span aria-label="required">*</span></label>
+            <input type="email" id="email" name="email" required aria-required="true" autocomplete="email" inputmode="email" aria-invalid="false">
           </div>
-          <div class="field">
-            <label for="contact-company">Company</label>
-            <input type="text" id="contact-company" name="company" autocomplete="organization">
+          <div class="form-group">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" autocomplete="organization">
           </div>
-          <div class="field field-full">
-            <label for="contact-message">How can we help? <span aria-label="required">*</span></label>
-            <textarea id="contact-message" name="message" rows="5" required aria-invalid="false"></textarea>
+          <div class="form-group">
+            <label for="message">Message <span aria-label="required">*</span></label>
+            <textarea id="message" name="message" rows="5" required aria-required="true" aria-invalid="false"></textarea>
           </div>
-          <div class="form-actions">
-            <button type="submit" class="btn btn-primary">Send message</button>
-            <p class="form-note">We treat every enquiry as confidential.</p>
-          </div>
+          <button type="submit" class="submit-btn">
+            <span class="btn-text">Send Message</span>
+          </button>
+          <div id="form-message" class="form-message" role="status" aria-live="polite"></div>
         </form>
       </div>
     </section>

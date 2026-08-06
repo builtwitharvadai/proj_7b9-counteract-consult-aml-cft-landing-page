@@ -1,37 +1,30 @@
 {
-  "files_created": [
-    "assets/images/corporate-office.jpg",
-    "assets/images/financial-security.jpg"
-  ],
+  "files_created": [],
   "files_modified": [
     "styles.css",
+    "scripts.js",
     "index.html"
   ],
   "decisions": [
     {
-      "what": "Created minimal valid 1x1 JPEG placeholders for corporate-office.jpg and financial-security.jpg",
-      "why": "Task requires image files at these paths; a real Unsplash download is out of scope for this offline code-generation workflow, so minimal valid JPEG bytes were written so browsers can still resolve the asset."
+      "what": "Scoped contact-form input/textarea/label styles to .contact-form",
+      "why": "Avoid overriding global input/label styles used elsewhere in the page while still matching the spec-required look for the contact form."
     },
     {
-      "what": "Appended trust-section, company-overview, educational-cards, edu-card, edu-card-content, and social-link styles to styles.css before the prefers-reduced-motion block",
-      "why": "CSS spec (003) explicitly lists these classes with concrete rules (padding, grid, filter grayscale, 60-degree clip-path via polygon(0 0, 100% 0, 100% 85%, 0 100%), mix-blend-mode multiply, hover states, and responsive adjustments); placed before reduced-motion query to preserve cascade order."
+      "what": "Rebuilt the existing contact section markup to match the spec (id='contact-form', field ids name/email/company/message, submit-btn, form-message)",
+      "why": "The pre-existing markup used different ids and classes; the spec requires exact ids (name, email, company, message) so JS validation and CSS hooks work as described."
     },
     {
-      "what": "Added trust-section class to the existing <section id=\"trust\"> and inserted company-overview, educational-cards, and social-links inside it",
-      "why": "Spec 004 says 'In the trust section, add ...' — kept the existing content and appended the new blocks so the new CSS applies and no prior work is discarded."
+      "what": "Applied .skeleton animation to the submit button while loading and added a .btn-text span for reliable text swapping",
+      "why": "The spec calls for a skeleton loading state on the button during submission and morphing text; wrapping the label lets JS swap text/icons without destroying event handlers."
     },
     {
-      "what": "Used inline SVG icons for Facebook, Instagram, and YouTube inside the social links",
-      "why": "Spec allows SVG or font icons; inline SVG avoids adding a FontAwesome dependency and keeps the page dependency-free, matching the project's existing pattern of local SVG assets."
-    },
-    {
-      "what": "Added prefers-reduced-motion overrides for .edu-card:hover img and .social-link:hover",
-      "why": "styles.css already had a prefers-reduced-motion block; extending it keeps the new hover transforms accessible."
+      "what": "Kept Formspree endpoint as the placeholder 'https://formspree.io/f/YOUR_FORM_ID' from the spec",
+      "why": "Spec explicitly states to use that URL and notes it should be replaced with an actual Formspree ID by the site owner; hardcoding a real one is out of scope."
     }
   ],
   "tools_used": [
     "Read",
-    "Bash",
     "Edit",
     "Write"
   ]
