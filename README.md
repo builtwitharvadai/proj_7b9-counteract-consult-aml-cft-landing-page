@@ -1,0 +1,2 @@
+# proj_7b9-counteract-consult-aml-cft-landing-page
+A professional, single-page marketing website for CounterAct Consult Limited, an AML/CFT (Anti-Money Laundering/Combating the Financing of Terrorism) consulting firm. The landing page will showcase the company's expertise, build trust with potential clients, and encourage engagement through clear calls-to-action. The design must strictly adhere to
