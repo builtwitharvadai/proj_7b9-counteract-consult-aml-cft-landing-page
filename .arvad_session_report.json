@@ -1,31 +1,38 @@
 {
-  "files_created": ["scripts.js"],
-  "files_modified": ["styles.css", "index.html"],
+  "files_created": [
+    "assets/images/corporate-office.jpg",
+    "assets/images/financial-security.jpg"
+  ],
+  "files_modified": [
+    "styles.css",
+    "index.html"
+  ],
   "decisions": [
     {
-      "what": "Appended services section styles before the existing prefers-reduced-motion block in styles.css",
-      "why": "Preserved existing cascade order (tokens -> base -> components -> media queries) by keeping the reduced-motion query last."
+      "what": "Created minimal valid 1x1 JPEG placeholders for corporate-office.jpg and financial-security.jpg",
+      "why": "Task requires image files at these paths; a real Unsplash download is out of scope for this offline code-generation workflow, so minimal valid JPEG bytes were written so browsers can still resolve the asset."
     },
     {
-      "what": "Added stagger delay selectors for both .service-card:nth-child(N) (spec-literal) and .services-grid > li:nth-child(N) .service-card (DOM-accurate)",
-      "why": "Existing markup wraps each service-card in an <li>, so a direct nth-child on the card would always be 1; supplying both selectors matches the actual DOM while retaining the literal selector called for in the spec."
+      "what": "Appended trust-section, company-overview, educational-cards, edu-card, edu-card-content, and social-link styles to styles.css before the prefers-reduced-motion block",
+      "why": "CSS spec (003) explicitly lists these classes with concrete rules (padding, grid, filter grayscale, 60-degree clip-path via polygon(0 0, 100% 0, 100% 85%, 0 100%), mix-blend-mode multiply, hover states, and responsive adjustments); placed before reduced-motion query to preserve cascade order."
     },
     {
-      "what": "Set opacity 1 on .reveal inside prefers-reduced-motion",
-      "why": "Without this override, users with reduced motion would see the content permanently hidden because the animation is stripped but the initial opacity: 0 would remain."
+      "what": "Added trust-section class to the existing <section id=\"trust\"> and inserted company-overview, educational-cards, and social-links inside it",
+      "why": "Spec 004 says 'In the trust section, add ...' — kept the existing content and appended the new blocks so the new CSS applies and no prior work is discarded."
     },
     {
-      "what": "Left the existing <script src=\\\"scripts.js\\\" defer> tag in index.html untouched and only added 'reveal' class to the six service cards",
-      "why": "The script tag was already present with the exact placement and attributes described in the spec (marked with the ARVAD comment); only the reveal class needed to be added."
+      "what": "Used inline SVG icons for Facebook, Instagram, and YouTube inside the social links",
+      "why": "Spec allows SVG or font icons; inline SVG avoids adding a FontAwesome dependency and keeps the page dependency-free, matching the project's existing pattern of local SVG assets."
     },
     {
-      "what": "IntersectionObserver disconnects after every observed element has activated; per-entry unobserve() runs on intersection",
-      "why": "Spec requires disconnecting the observer after animations to improve performance."
-    },
-    {
-      "what": "Fallback path adds 'active' class immediately when IntersectionObserver is unsupported",
-      "why": "Spec explicitly requires the fallback so content remains visible on older browsers."
+      "what": "Added prefers-reduced-motion overrides for .edu-card:hover img and .social-link:hover",
+      "why": "styles.css already had a prefers-reduced-motion block; extending it keeps the new hover transforms accessible."
     }
   ],
-  "tools_used": ["Read", "Edit", "Write", "Bash"]
+  "tools_used": [
+    "Read",
+    "Bash",
+    "Edit",
+    "Write"
+  ]
 }

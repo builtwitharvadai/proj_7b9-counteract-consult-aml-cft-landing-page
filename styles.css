@@ -617,6 +617,156 @@ p {
   animation-delay: 0.6s;
 }
 
+.trust-section {
+  padding: 120px 2rem;
+  position: relative;
+}
+
+.company-overview {
+  max-width: 800px;
+  margin: 0 auto 4rem;
+  text-align: center;
+  font-family: 'Exo 2', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+.company-overview p {
+  max-width: none;
+  margin-inline: auto;
+  color: var(--color-black);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
+.trust-section h2 {
+  font-family: 'Saira Condensed', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--color-dark-purple);
+  margin-bottom: 2rem;
+}
+
+.educational-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.edu-card {
+  position: relative;
+  height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.edu-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: all 0.3s;
+}
+
+.edu-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(44, 62, 248, 0.7), rgba(26, 11, 104, 0.7));
+  mix-blend-mode: multiply;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  pointer-events: none;
+}
+
+.edu-card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  color: var(--color-white);
+  z-index: 1;
+}
+
+.edu-card h3 {
+  font-family: 'Saira Condensed', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-white);
+}
+
+.edu-card-content p {
+  color: var(--color-white);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  max-width: none;
+}
+
+.edu-card:hover img {
+  filter: grayscale(0);
+  transform: scale(1.05);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.social-link {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-primary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  color: var(--color-white);
+}
+
+.social-link svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+.social-link:hover,
+.social-link:focus-visible {
+  background: var(--color-dark-purple);
+  transform: scale(1.1);
+  color: var(--color-white);
+}
+
+@media (max-width: 768px) {
+  .trust-section {
+    padding: 80px 1.25rem;
+  }
+
+  .company-overview {
+    margin-bottom: 2.5rem;
+  }
+
+  .educational-cards {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .edu-card {
+    height: 260px;
+  }
+
+  .edu-card-content {
+    padding: 1.5rem;
+  }
+
+  .social-links {
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -630,6 +780,11 @@ p {
   .hero .cta-button:hover,
   .hero .btn-primary:hover,
   .hero .btn-secondary:hover {
+    transform: none;
+  }
+
+  .edu-card:hover img,
+  .social-link:hover {
     transform: none;
   }
 
