@@ -1,47 +1,23 @@
 {
-  "files_created": [
-    "README.md",
-    "assets/logos/primary-logo.svg",
-    "assets/logos/icon.svg",
-    "assets/images/favicon.png",
-    "assets/icons/security.svg",
-    "assets/icons/lock.svg",
-    "assets/icons/firewall.svg",
-    "assets/icons/caution.svg",
-    "assets/icons/info.svg"
-  ],
-  "files_modified": [
-    ".gitignore"
-  ],
+  "files_created": ["index.html"],
+  "files_modified": [],
   "decisions": [
     {
-      "what": "Kept existing arvad_task_files/ exclusion in .gitignore and appended OS/editor/build-artifact rules",
-      "why": ".gitignore already existed with one line; the spec required OS/editor/build entries so appended rather than replaced to preserve prior intent"
+      "what": "Applied Tier 2 HTML patterns (Open Graph, meta description, ARIA labels, semantic HTML5 sectioning) per the html-code-generation-rules for a public landing page.",
+      "why": "Task specifies a full marketing landing page with SEO/OG tags — matches Tier 2, not Tier 1 or Tier 3."
     },
     {
-      "what": "Rewrote README.md to align with the CounterAct Consult brand tagline, palette, typography, structure, and GitHub Pages deployment guidance",
-      "why": "Existing README stub only had the auto-generated project name; the spec required a full brand-aligned overview with all colors, fonts, structure, and deployment notes"
+      "what": "Reused assets/icons/lock.svg for two of six service cards (money-laundering prevention and financial-crime compliance).",
+      "why": "Only 5 pixel-aesthetic icons exist in assets/icons/ (security, lock, firewall, caution, info) but 6 service cards are required; lock semantically matches both compliance-oriented services and forbidden_imports blocks adding new icon files."
     },
     {
-      "what": "Built logos and icons as pure hand-authored SVG using rect primitives on a pixel grid",
-      "why": "Brand direction calls for a pixel-aesthetic pattern language on a 40x40 grid; rect-based SVGs deliver that faithfully, stay small, and remain crisp at any scale"
+      "what": "Linked styles.css and scripts.js with defer despite them not existing yet.",
+      "why": "README documents them as project files and future tasks will create them; index.html is the entry point and needs the references."
     },
     {
-      "what": "Generated favicon.png as a valid 60x60 RGBA PNG (byte-level PNG chunks written from Python) mirroring the icon.svg shield mark",
-      "why": "The favicon must be a real PNG (browsers cannot parse SVG under a .png extension) and derived from the icon logo per spec"
-    },
-    {
-      "what": "Used Primary Blue #2C3EF8 for security/lock/firewall, Bright Green #00FD00 for caution, and Light Blue #ABB2FC for info",
-      "why": "Each icon spec called out the brand color to apply; the choices satisfy the spec's color guidance and preserve visual hierarchy"
+      "what": "Used relative asset paths (assets/logos/primary-logo.svg, assets/images/favicon.png).",
+      "why": "README specifies GitHub Pages deployment with relative paths so the site works from any sub-path."
     }
   ],
-  "tools_used": [
-    "Read",
-    "Write",
-    "Edit",
-    "Glob",
-    "Bash",
-    "TodoWrite",
-    "ToolSearch"
-  ]
+  "tools_used": ["Read", "Write"]
 }
