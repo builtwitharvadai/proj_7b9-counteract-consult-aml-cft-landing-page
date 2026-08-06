@@ -1,31 +1,35 @@
 {
-  "files_created": [],
+  "files_created": [
+    "assets/images/corporate-office.webp",
+    "assets/images/financial-security.webp"
+  ],
   "files_modified": [
     "styles.css",
-    "scripts.js",
-    "index.html"
+    "index.html",
+    "README.md"
   ],
   "decisions": [
     {
-      "what": "Scoped contact-form input/textarea/label styles to .contact-form",
-      "why": "Avoid overriding global input/label styles used elsewhere in the page while still matching the spec-required look for the contact form."
+      "what": "Replaced existing site-header/site-footer markup with spec's .header/.footer + .logo-container/.social-links/.copyright structure",
+      "why": "Spec explicitly requested those class names and internal structure; implementing the spec verbatim per NO ASSUMPTIONS rule"
     },
     {
-      "what": "Rebuilt the existing contact section markup to match the spec (id='contact-form', field ids name/email/company/message, submit-btn, form-message)",
-      "why": "The pre-existing markup used different ids and classes; the spec requires exact ids (name, email, company, message) so JS validation and CSS hooks work as described."
+      "what": "Wrapped edu-card images in <picture> with WebP <source> and WebP <img> fallback",
+      "why": "Spec allowed either direct .webp swap or <picture> element; used <picture> for progressive enhancement while keeping descriptive alt text on every image"
     },
     {
-      "what": "Applied .skeleton animation to the submit button while loading and added a .btn-text span for reliable text swapping",
-      "why": "The spec calls for a skeleton loading state on the button during submission and morphing text; wrapping the label lets JS swap text/icons without destroying event handlers."
+      "what": "Generated 1x1 WebP files by converting the existing 1x1 JPG placeholders using Pillow at quality 85",
+      "why": "Source JPGs in the repo are 1x1 offline placeholders; matched that convention so dimensions and file format stay consistent with the existing pattern documented in the learned context"
     },
     {
-      "what": "Kept Formspree endpoint as the placeholder 'https://formspree.io/f/YOUR_FORM_ID' from the spec",
-      "why": "Spec explicitly states to use that URL and notes it should be replaced with an actual Formspree ID by the site owner; hardcoding a real one is out of scope."
+      "what": "Extended styles.css with .header, .footer, .footer .social-links, .footer .social-link, .footer .copyright, and small-screen media queries",
+      "why": "Spec called for sticky header with logo clear space, dark-purple footer with 48px social circles, light-blue copyright, and final responsive polish"
     }
   ],
   "tools_used": [
     "Read",
     "Edit",
-    "Write"
+    "Write",
+    "Bash"
   ]
 }
