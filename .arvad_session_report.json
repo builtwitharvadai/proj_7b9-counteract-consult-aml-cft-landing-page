@@ -1,23 +1,15 @@
 {
-  "files_created": ["index.html"],
-  "files_modified": [],
+  "files_created": ["styles.css"],
+  "files_modified": ["index.html"],
   "decisions": [
     {
-      "what": "Applied Tier 2 HTML patterns (Open Graph, meta description, ARIA labels, semantic HTML5 sectioning) per the html-code-generation-rules for a public landing page.",
-      "why": "Task specifies a full marketing landing page with SEO/OG tags — matches Tier 2, not Tier 1 or Tier 3."
+      "what": "Created styles.css with @import for Saira Condensed (400,600,700) and Exo 2 (400,500,600), :root brand color custom properties, CSS reset (box-sizing, margin/padding reset, list-style none), typography scale using Saira Condensed for headings and Exo 2 for body, responsive breakpoint tokens, and utility classes (.container, .grid, .flex, .flex-col, .items-center, .justify-between).",
+      "why": "Spec 001 required a full design-system foundation with brand color custom properties, Google Fonts integration, mobile-first responsive utilities, and CSS reset."
     },
     {
-      "what": "Reused assets/icons/lock.svg for two of six service cards (money-laundering prevention and financial-crime compliance).",
-      "why": "Only 5 pixel-aesthetic icons exist in assets/icons/ (security, lock, firewall, caution, info) but 6 service cards are required; lock semantically matches both compliance-oriented services and forbidden_imports blocks adding new icon files."
-    },
-    {
-      "what": "Linked styles.css and scripts.js with defer despite them not existing yet.",
-      "why": "README documents them as project files and future tasks will create them; index.html is the entry point and needs the references."
-    },
-    {
-      "what": "Used relative asset paths (assets/logos/primary-logo.svg, assets/images/favicon.png).",
-      "why": "README specifies GitHub Pages deployment with relative paths so the site works from any sub-path."
+      "what": "Added an ARVAD marker HTML comment above the existing <link rel=\"stylesheet\" href=\"styles.css\"> in index.html rather than duplicating the link tag.",
+      "why": "Spec 002 asked to add the stylesheet link after the favicon; the link already existed at line 26 (after the favicon and Google Fonts preconnect/import). Per rule 9, the marker was added while confirming the implementation, avoiding a duplicate link element."
     }
   ],
-  "tools_used": ["Read", "Write"]
+  "tools_used": ["Read", "Write", "Edit", "Bash"]
 }
