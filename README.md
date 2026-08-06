@@ -14,8 +14,12 @@ A single-page marketing site for **CounterAct Consult Limited**, a specialist An
 4. [Typography](#typography)
 5. [Project Structure](#project-structure)
 6. [Local Development](#local-development)
-7. [Deployment (GitHub Pages)](#deployment-github-pages)
-8. [Brand Manual](#brand-manual)
+7. [Performance Optimization](#performance-optimization)
+8. [Lighthouse Scores](#lighthouse-scores)
+9. [Deployment (GitHub Pages)](#deployment-github-pages)
+10. [Testing](#testing)
+11. [Future Enhancements](#future-enhancements)
+12. [Brand Manual](#brand-manual)
 
 ---
 
@@ -93,10 +97,10 @@ Suggested embed:
     │   └── icon.svg         # Compact icon/symbol version
     ├── images/
     │   ├── favicon.png              # 60x60 browser tab icon
-    │   ├── corporate-office.jpg     # Hero / about imagery (raster)
-    │   ├── corporate-office.webp    # WebP counterpart
-    │   ├── financial-security.jpg   # Secondary imagery (raster)
-    │   └── financial-security.webp  # WebP counterpart
+    │   ├── corporate-office.jpg     # Hero / about imagery (raster fallback)
+    │   ├── corporate-office.webp    # WebP optimized counterpart
+    │   ├── financial-security.jpg   # Secondary imagery (raster fallback)
+    │   └── financial-security.webp  # WebP optimized counterpart
     └── icons/
         ├── security.svg     # Pixel-aesthetic icon — security services
         ├── lock.svg         # Pixel-aesthetic icon — compliance / protection
@@ -148,6 +152,41 @@ Then open <http://localhost:8000> in your browser.
 
 ---
 
+## Performance Optimization
+
+The site is engineered for a sub-3-second load time and strong Core Web Vitals. Key techniques in use:
+
+- **Image optimization to WebP** — photographic assets are shipped as WebP (`corporate-office.webp`, `financial-security.webp`) at quality 80–90. Each asset is kept under 200 KB. `<picture>` with a WebP `<source>` and a JPG `<img>` fallback keeps older browsers supported.
+- **Lazy loading** — below-the-fold images use `loading="lazy"` and `decoding="async"` so they never block the initial paint. The hero/LCP image is never lazy-loaded.
+- **CSS best practices** — a single stylesheet, semantic tokens via CSS custom properties, no dead selectors, `will-change` restricted to genuinely animated properties, `prefers-reduced-motion` respected globally.
+- **Minified CSS (production)** — for production deployments the CSS should be minified. A quick option:
+
+  ```bash
+  npx --yes clean-css-cli styles.css -o styles.min.css
+  ```
+
+  Then reference `styles.min.css` from `index.html` in production.
+- **Preconnect to font origins** — `fonts.googleapis.com` and `fonts.gstatic.com` are preconnected in the `<head>` to shorten font-fetch handshakes.
+- **Deferred JavaScript** — `scripts.js` is loaded with the `defer` attribute so it never blocks parsing.
+- **Explicit width/height on images** — prevents Cumulative Layout Shift (CLS).
+
+---
+
+## Lighthouse Scores
+
+Target scores (production build, mobile emulation, Lighthouse 12+):
+
+| Category         | Target | Notes                                                              |
+|------------------|--------|--------------------------------------------------------------------|
+| Performance      | 90+    | LCP < 2.5s, CLS < 0.1, TBT < 200ms                                 |
+| Accessibility    | 90+    | Semantic landmarks, contrast, focus states, ARIA where needed      |
+| Best Practices   | 90+    | HTTPS, no console errors, images served with correct aspect ratio  |
+| SEO              | 90+    | Meta description, canonical, Open Graph, mobile-friendly viewport  |
+
+Re-run before every deploy — regressions here are the fastest signal that a change broke performance or accessibility.
+
+---
+
 ## Deployment (GitHub Pages)
 
 The project is designed to deploy as-is to GitHub Pages.
@@ -161,7 +200,50 @@ The project is designed to deploy as-is to GitHub Pages.
 
 No workflow file is required. Because every path in the HTML/CSS is relative (`assets/…`), the site works whether it's served from a domain root or a project sub-path.
 
+**Live site URL:** *link to be added once the production deploy is confirmed.*
+
 **Custom domain (optional):** add a `CNAME` file at the repository root containing the domain, then configure a DNS `CNAME` record pointing at `<org-or-user>.github.io`.
+
+---
+
+## Testing
+
+**Run a Lighthouse audit locally**
+
+```bash
+# Chrome DevTools → Lighthouse tab → Analyze page load
+# Or via CLI:
+npx --yes lighthouse http://localhost:8000 --view --preset=desktop
+npx --yes lighthouse http://localhost:8000 --view    # mobile default
+```
+
+**Cross-browser testing**
+
+- Chromium (Chrome, Edge, Brave) — primary target.
+- Firefox — verify SVG rendering, focus outlines, and font fallback.
+- Safari (macOS and iOS) — verify sticky header, `backdrop-filter` fallback, form field styling.
+- Test at 320 px, 375 px, 768 px, 1024 px, and 1440 px widths at minimum.
+
+**Manual accessibility checks**
+
+- Keyboard: tab through the page — every interactive element must be reachable and show a visible focus ring.
+- Screen reader: run VoiceOver (macOS) or NVDA (Windows) through the hero, services, and contact form.
+- Color contrast: confirm with the browser DevTools contrast checker on any text over an image or coloured surface.
+
+---
+
+## Future Enhancements
+
+Ideas for follow-up iterations, roughly in priority order:
+
+- **Analytics** — privacy-respecting analytics (Plausible, Fathom, or self-hosted Umami) to measure conversion on the "Book a consultation" CTA.
+- **A/B testing** — headline and CTA variants for the hero section to optimise consultation bookings.
+- **Additional content** — a Resources / Insights section with short articles on regulatory updates, examination readiness, and sanctions-screening tuning.
+- **Case studies** — anonymised engagement summaries that reinforce operator-led positioning without breaching client confidentiality.
+- **Multilingual support** — French and Arabic variants for regulated-market audiences outside the UK/EU.
+- **Contact form backend hardening** — move from a third-party form provider to a serverless handler with reCAPTCHA and audit logging.
+- **Dark-mode variant** — leveraging `prefers-color-scheme` and the existing Dark Purple palette.
+- **Structured data (JSON-LD)** — `Organization` schema for richer SEO.
 
 ---
 
