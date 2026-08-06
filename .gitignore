@@ -1,0 +1,84 @@
+# ==============================================================================
+# CounterAct Consult AML/CFT Landing Page - .gitignore
+# ==============================================================================
+
+# Claude CLI task files
+arvad_task_files/
+
+# ------------------------------------------------------------------------------
+# Operating System files
+# ------------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+desktop.ini
+$RECYCLE.BIN/
+Icon?
+*.lnk
+
+# ------------------------------------------------------------------------------
+# Editor and IDE configurations
+# ------------------------------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*.sublime-project
+*.sublime-workspace
+*.iml
+.project
+.classpath
+.settings/
+*.bak
+*.tmp
+*~
+.netrwhist
+Session.vim
+.vim/
+.nvimrc
+
+# ------------------------------------------------------------------------------
+# Build artifacts and generated files (prepared for future use)
+# ------------------------------------------------------------------------------
+dist/
+build/
+out/
+.cache/
+.parcel-cache/
+.tmp/
+tmp/
+*.log
+logs/
+*.pid
+*.seed
+*.pid.lock
+
+# ------------------------------------------------------------------------------
+# Environment and local configuration
+# ------------------------------------------------------------------------------
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+
+# ------------------------------------------------------------------------------
+# Coverage and test reports (prepared for future use)
+# ------------------------------------------------------------------------------
+coverage/
+.nyc_output/
+*.lcov
+test-results/
+
+# ------------------------------------------------------------------------------
+# Miscellaneous
+# ------------------------------------------------------------------------------
+*.orig
+*.rej
+.history/

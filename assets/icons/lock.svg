@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" role="img" aria-labelledby="lockTitle lockDesc">
+  <title id="lockTitle">Lock</title>
+  <desc id="lockDesc">Pixel-aesthetic padlock icon representing compliance and protection, in Primary Blue.</desc>
+
+  <!-- 40x40 grid, each pixel is 4x4 -->
+  <g fill="#2C3EF8">
+    <!-- Shackle (top arc), rows 0-3 -->
+    <rect x="16" y="4" width="4" height="4"/>
+    <rect x="20" y="4" width="4" height="4"/>
+
+    <rect x="12" y="8" width="4" height="4"/>
+    <rect x="24" y="8" width="4" height="4"/>
+
+    <rect x="12" y="12" width="4" height="4"/>
+    <rect x="24" y="12" width="4" height="4"/>
+
+    <!-- Lock body top row -->
+    <rect x="8" y="16" width="4" height="4"/>
+    <rect x="12" y="16" width="4" height="4"/>
+    <rect x="16" y="16" width="4" height="4"/>
+    <rect x="20" y="16" width="4" height="4"/>
+    <rect x="24" y="16" width="4" height="4"/>
+    <rect x="28" y="16" width="4" height="4"/>
+
+    <!-- Body row with keyhole start -->
+    <rect x="8" y="20" width="4" height="4"/>
+    <rect x="12" y="20" width="4" height="4"/>
+    <rect x="16" y="20" width="4" height="4"/>
+    <rect x="20" y="20" width="4" height="4"/>
+    <rect x="24" y="20" width="4" height="4"/>
+    <rect x="28" y="20" width="4" height="4"/>
+
+    <!-- Body row with keyhole hole -->
+    <rect x="8" y="24" width="4" height="4"/>
+    <rect x="12" y="24" width="4" height="4"/>
+    <rect x="24" y="24" width="4" height="4"/>
+    <rect x="28" y="24" width="4" height="4"/>
+
+    <!-- Body row -->
+    <rect x="8" y="28" width="4" height="4"/>
+    <rect x="12" y="28" width="4" height="4"/>
+    <rect x="16" y="28" width="4" height="4"/>
+    <rect x="20" y="28" width="4" height="4"/>
+    <rect x="24" y="28" width="4" height="4"/>
+    <rect x="28" y="28" width="4" height="4"/>
+
+    <!-- Body bottom row -->
+    <rect x="8" y="32" width="4" height="4"/>
+    <rect x="12" y="32" width="4" height="4"/>
+    <rect x="16" y="32" width="4" height="4"/>
+    <rect x="20" y="32" width="4" height="4"/>
+    <rect x="24" y="32" width="4" height="4"/>
+    <rect x="28" y="32" width="4" height="4"/>
+  </g>
+</svg>
