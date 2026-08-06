@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100" role="img" aria-labelledby="caLogoTitle caLogoDesc">
+  <title id="caLogoTitle">CounterAct Consult</title>
+  <desc id="caLogoDesc">CounterAct Consult primary wordmark with a pixel-aesthetic shield symbol in Primary Blue.</desc>
+
+  <!-- Symbol: pixel-aesthetic shield / counter-mark -->
+  <g fill="#2C3EF8">
+    <!-- Shield outer silhouette built from pixel squares (10x10 units) -->
+    <rect x="20" y="20" width="10" height="10"/>
+    <rect x="30" y="20" width="10" height="10"/>
+    <rect x="40" y="20" width="10" height="10"/>
+    <rect x="50" y="20" width="10" height="10"/>
+    <rect x="60" y="20" width="10" height="10"/>
+    <rect x="70" y="20" width="10" height="10"/>
+
+    <rect x="10" y="30" width="10" height="10"/>
+    <rect x="80" y="30" width="10" height="10"/>
+
+    <rect x="10" y="40" width="10" height="10"/>
+    <rect x="80" y="40" width="10" height="10"/>
+
+    <rect x="10" y="50" width="10" height="10"/>
+    <rect x="80" y="50" width="10" height="10"/>
+
+    <rect x="20" y="60" width="10" height="10"/>
+    <rect x="70" y="60" width="10" height="10"/>
+
+    <rect x="30" y="70" width="10" height="10"/>
+    <rect x="60" y="70" width="10" height="10"/>
+
+    <rect x="40" y="80" width="10" height="10"/>
+    <rect x="50" y="80" width="10" height="10"/>
+
+    <!-- Interior "C" counter-mark -->
+    <rect x="35" y="35" width="10" height="10"/>
+    <rect x="45" y="35" width="10" height="10"/>
+    <rect x="55" y="35" width="10" height="10"/>
+
+    <rect x="30" y="45" width="10" height="10"/>
+
+    <rect x="30" y="55" width="10" height="10"/>
+
+    <rect x="35" y="65" width="10" height="10"/>
+    <rect x="45" y="65" width="10" height="10"/>
+    <rect x="55" y="65" width="10" height="10"/>
+  </g>
+
+  <!-- Wordmark -->
+  <g fill="#2C3EF8" font-family="'Saira Condensed', 'Arial Narrow', sans-serif">
+    <text x="110" y="52" font-size="34" font-weight="700" letter-spacing="1.5">COUNTERACT</text>
+    <text x="110" y="80" font-size="20" font-weight="500" letter-spacing="6" fill="#1A0B68">CONSULT</text>
+  </g>
+</svg>

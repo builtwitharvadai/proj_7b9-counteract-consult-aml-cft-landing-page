@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" role="img" aria-labelledby="fwTitle fwDesc">
+  <title id="fwTitle">Firewall</title>
+  <desc id="fwDesc">Pixel-aesthetic brick-wall icon representing firewall and fraud-prevention barriers, in Primary Blue.</desc>
+
+  <!-- 40x40 grid, each pixel is 4x4. Brick-wall pattern with staggered courses. -->
+  <g fill="#2C3EF8">
+    <!-- Row 0: top border -->
+    <rect x="0" y="0" width="4" height="4"/>
+    <rect x="4" y="0" width="4" height="4"/>
+    <rect x="8" y="0" width="4" height="4"/>
+    <rect x="12" y="0" width="4" height="4"/>
+    <rect x="16" y="0" width="4" height="4"/>
+    <rect x="20" y="0" width="4" height="4"/>
+    <rect x="24" y="0" width="4" height="4"/>
+    <rect x="28" y="0" width="4" height="4"/>
+    <rect x="32" y="0" width="4" height="4"/>
+    <rect x="36" y="0" width="4" height="4"/>
+
+    <!-- Row 1: course A (mortar lines at x=8,20,32) -->
+    <rect x="0" y="4" width="4" height="4"/>
+    <rect x="4" y="4" width="4" height="4"/>
+    <rect x="12" y="4" width="4" height="4"/>
+    <rect x="16" y="4" width="4" height="4"/>
+    <rect x="24" y="4" width="4" height="4"/>
+    <rect x="28" y="4" width="4" height="4"/>
+    <rect x="36" y="4" width="4" height="4"/>
+
+    <!-- Row 2: same as course A -->
+    <rect x="0" y="8" width="4" height="4"/>
+    <rect x="4" y="8" width="4" height="4"/>
+    <rect x="12" y="8" width="4" height="4"/>
+    <rect x="16" y="8" width="4" height="4"/>
+    <rect x="24" y="8" width="4" height="4"/>
+    <rect x="28" y="8" width="4" height="4"/>
+    <rect x="36" y="8" width="4" height="4"/>
+
+    <!-- Row 3: horizontal mortar (full row) -->
+    <rect x="0" y="12" width="4" height="4"/>
+    <rect x="8" y="12" width="4" height="4"/>
+    <rect x="16" y="12" width="4" height="4"/>
+    <rect x="24" y="12" width="4" height="4"/>
+    <rect x="32" y="12" width="4" height="4"/>
+
+    <!-- Row 4: course B (mortar lines at x=4,16,28) -->
+    <rect x="0" y="16" width="4" height="4"/>
+    <rect x="8" y="16" width="4" height="4"/>
+    <rect x="12" y="16" width="4" height="4"/>
+    <rect x="20" y="16" width="4" height="4"/>
+    <rect x="24" y="16" width="4" height="4"/>
+    <rect x="32" y="16" width="4" height="4"/>
+    <rect x="36" y="16" width="4" height="4"/>
+
+    <!-- Row 5: same as course B -->
+    <rect x="0" y="20" width="4" height="4"/>
+    <rect x="8" y="20" width="4" height="4"/>
+    <rect x="12" y="20" width="4" height="4"/>
+    <rect x="20" y="20" width="4" height="4"/>
+    <rect x="24" y="20" width="4" height="4"/>
+    <rect x="32" y="20" width="4" height="4"/>
+    <rect x="36" y="20" width="4" height="4"/>
+
+    <!-- Row 6: horizontal mortar -->
+    <rect x="4" y="24" width="4" height="4"/>
+    <rect x="12" y="24" width="4" height="4"/>
+    <rect x="20" y="24" width="4" height="4"/>
+    <rect x="28" y="24" width="4" height="4"/>
+    <rect x="36" y="24" width="4" height="4"/>
+
+    <!-- Row 7: course A repeat -->
+    <rect x="0" y="28" width="4" height="4"/>
+    <rect x="4" y="28" width="4" height="4"/>
+    <rect x="12" y="28" width="4" height="4"/>
+    <rect x="16" y="28" width="4" height="4"/>
+    <rect x="24" y="28" width="4" height="4"/>
+    <rect x="28" y="28" width="4" height="4"/>
+    <rect x="36" y="28" width="4" height="4"/>
+
+    <!-- Row 8: course A repeat -->
+    <rect x="0" y="32" width="4" height="4"/>
+    <rect x="4" y="32" width="4" height="4"/>
+    <rect x="12" y="32" width="4" height="4"/>
+    <rect x="16" y="32" width="4" height="4"/>
+    <rect x="24" y="32" width="4" height="4"/>
+    <rect x="28" y="32" width="4" height="4"/>
+    <rect x="36" y="32" width="4" height="4"/>
+
+    <!-- Row 9: bottom border -->
+    <rect x="0" y="36" width="4" height="4"/>
+    <rect x="4" y="36" width="4" height="4"/>
+    <rect x="8" y="36" width="4" height="4"/>
+    <rect x="12" y="36" width="4" height="4"/>
+    <rect x="16" y="36" width="4" height="4"/>
+    <rect x="20" y="36" width="4" height="4"/>
+    <rect x="24" y="36" width="4" height="4"/>
+    <rect x="28" y="36" width="4" height="4"/>
+    <rect x="32" y="36" width="4" height="4"/>
+    <rect x="36" y="36" width="4" height="4"/>
+  </g>
+</svg>

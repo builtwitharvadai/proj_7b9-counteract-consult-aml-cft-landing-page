@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" role="img" aria-labelledby="secTitle secDesc">
+  <title id="secTitle">Security</title>
+  <desc id="secDesc">Pixel-aesthetic shield icon representing security and protection, in Primary Blue.</desc>
+
+  <!-- 40x40 grid, each pixel is 4x4 -->
+  <g fill="#2C3EF8">
+    <!-- Row 0 (y=0): shield top -->
+    <rect x="16" y="0" width="4" height="4"/>
+    <rect x="20" y="0" width="4" height="4"/>
+
+    <!-- Row 1 -->
+    <rect x="12" y="4" width="4" height="4"/>
+    <rect x="16" y="4" width="4" height="4"/>
+    <rect x="20" y="4" width="4" height="4"/>
+    <rect x="24" y="4" width="4" height="4"/>
+
+    <!-- Row 2 -->
+    <rect x="8" y="8" width="4" height="4"/>
+    <rect x="12" y="8" width="4" height="4"/>
+    <rect x="16" y="8" width="4" height="4"/>
+    <rect x="20" y="8" width="4" height="4"/>
+    <rect x="24" y="8" width="4" height="4"/>
+    <rect x="28" y="8" width="4" height="4"/>
+
+    <!-- Row 3 - outer edges + inner check -->
+    <rect x="8" y="12" width="4" height="4"/>
+    <rect x="28" y="12" width="4" height="4"/>
+
+    <!-- Row 4 - checkmark start -->
+    <rect x="8" y="16" width="4" height="4"/>
+    <rect x="24" y="16" width="4" height="4"/>
+    <rect x="28" y="16" width="4" height="4"/>
+
+    <!-- Row 5 - checkmark middle -->
+    <rect x="8" y="20" width="4" height="4"/>
+    <rect x="12" y="20" width="4" height="4"/>
+    <rect x="20" y="20" width="4" height="4"/>
+    <rect x="24" y="20" width="4" height="4"/>
+    <rect x="28" y="20" width="4" height="4"/>
+
+    <!-- Row 6 - checkmark meet -->
+    <rect x="12" y="24" width="4" height="4"/>
+    <rect x="16" y="24" width="4" height="4"/>
+    <rect x="20" y="24" width="4" height="4"/>
+    <rect x="28" y="24" width="4" height="4"/>
+
+    <!-- Row 7 - shield narrowing -->
+    <rect x="12" y="28" width="4" height="4"/>
+    <rect x="24" y="28" width="4" height="4"/>
+
+    <!-- Row 8 - point -->
+    <rect x="16" y="32" width="4" height="4"/>
+    <rect x="20" y="32" width="4" height="4"/>
+
+    <!-- Row 9 - tip -->
+    <rect x="16" y="36" width="4" height="4"/>
+    <rect x="20" y="36" width="4" height="4"/>
+  </g>
+</svg>

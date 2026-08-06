@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" role="img" aria-labelledby="infoTitle infoDesc">
+  <title id="infoTitle">Info</title>
+  <desc id="infoDesc">Pixel-aesthetic circular info icon with lowercase i, in Light Blue.</desc>
+
+  <!-- 40x40 grid, each pixel is 4x4. Circular badge with lowercase 'i'. -->
+  <g fill="#ABB2FC">
+    <!-- Row 0: top curve -->
+    <rect x="12" y="0" width="4" height="4"/>
+    <rect x="16" y="0" width="4" height="4"/>
+    <rect x="20" y="0" width="4" height="4"/>
+    <rect x="24" y="0" width="4" height="4"/>
+
+    <!-- Row 1 -->
+    <rect x="8" y="4" width="4" height="4"/>
+    <rect x="12" y="4" width="4" height="4"/>
+    <rect x="24" y="4" width="4" height="4"/>
+    <rect x="28" y="4" width="4" height="4"/>
+
+    <!-- Row 2 -->
+    <rect x="4" y="8" width="4" height="4"/>
+    <rect x="8" y="8" width="4" height="4"/>
+    <rect x="28" y="8" width="4" height="4"/>
+    <rect x="32" y="8" width="4" height="4"/>
+    <!-- Dot of 'i' -->
+    <rect x="18" y="8" width="4" height="4"/>
+
+    <!-- Row 3 -->
+    <rect x="4" y="12" width="4" height="4"/>
+    <rect x="32" y="12" width="4" height="4"/>
+
+    <!-- Row 4 -->
+    <rect x="0" y="16" width="4" height="4"/>
+    <rect x="4" y="16" width="4" height="4"/>
+    <rect x="32" y="16" width="4" height="4"/>
+    <rect x="36" y="16" width="4" height="4"/>
+    <!-- Stem of 'i' -->
+    <rect x="18" y="16" width="4" height="4"/>
+
+    <!-- Row 5 -->
+    <rect x="0" y="20" width="4" height="4"/>
+    <rect x="4" y="20" width="4" height="4"/>
+    <rect x="32" y="20" width="4" height="4"/>
+    <rect x="36" y="20" width="4" height="4"/>
+    <!-- Stem of 'i' -->
+    <rect x="18" y="20" width="4" height="4"/>
+
+    <!-- Row 6 -->
+    <rect x="4" y="24" width="4" height="4"/>
+    <rect x="32" y="24" width="4" height="4"/>
+    <!-- Stem of 'i' -->
+    <rect x="18" y="24" width="4" height="4"/>
+
+    <!-- Row 7 -->
+    <rect x="4" y="28" width="4" height="4"/>
+    <rect x="8" y="28" width="4" height="4"/>
+    <rect x="28" y="28" width="4" height="4"/>
+    <rect x="32" y="28" width="4" height="4"/>
+
+    <!-- Row 8 -->
+    <rect x="8" y="32" width="4" height="4"/>
+    <rect x="12" y="32" width="4" height="4"/>
+    <rect x="24" y="32" width="4" height="4"/>
+    <rect x="28" y="32" width="4" height="4"/>
+
+    <!-- Row 9: bottom curve -->
+    <rect x="12" y="36" width="4" height="4"/>
+    <rect x="16" y="36" width="4" height="4"/>
+    <rect x="20" y="36" width="4" height="4"/>
+    <rect x="24" y="36" width="4" height="4"/>
+  </g>
+</svg>
