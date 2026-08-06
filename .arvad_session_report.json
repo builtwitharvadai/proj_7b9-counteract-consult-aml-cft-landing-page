@@ -1,26 +1,30 @@
 {
-  "files_created": [],
-  "files_modified": ["styles.css"],
+  "files_created": ["scripts.js"],
+  "files_modified": ["styles.css", "index.html"],
   "decisions": [
     {
-      "what": "Appended hero section styles before the prefers-reduced-motion media query in styles.css",
-      "why": "Preserved the existing token/reset structure at the top of the file and kept the reduced-motion query at the end so it still overrides transitions on newly added hero elements."
+      "what": "Appended services section styles before the existing prefers-reduced-motion block in styles.css",
+      "why": "Preserved existing cascade order (tokens -> base -> components -> media queries) by keeping the reduced-motion query last."
     },
     {
-      "what": "Applied hero CTA styling to both .cta-button and the existing .btn-primary inside .hero",
-      "why": "index.html uses .btn.btn-primary for the hero CTA rather than a .cta-button class; scoping CTA rules to .hero ensures the specified visuals apply to actual markup without leaking to other buttons."
+      "what": "Added stagger delay selectors for both .service-card:nth-child(N) (spec-literal) and .services-grid > li:nth-child(N) .service-card (DOM-accurate)",
+      "why": "Existing markup wraps each service-card in an <li>, so a direct nth-child on the card would always be 1; supplying both selectors matches the actual DOM while retaining the literal selector called for in the spec."
     },
     {
-      "what": "Implemented pixel-aesthetic decoration via radial-gradient dot pattern on .hero::before/::after plus a .pixel-pattern CSS Grid utility (grid-template-columns: repeat(auto-fit, 40px), gap: 40px, opacity 0.1, z-index -1)",
-      "why": "Spec calls for pixel-aesthetic patterns and a CSS Grid pixel pattern; providing both the decorative pseudo-element pattern (rendered without extra markup) and the reusable .pixel-pattern grid class satisfies both requirements."
+      "what": "Set opacity 1 on .reveal inside prefers-reduced-motion",
+      "why": "Without this override, users with reduced motion would see the content permanently hidden because the animation is stripped but the initial opacity: 0 would remain."
     },
     {
-      "what": "Used clip-path polygon() with rotate(60deg) on hero pseudo-elements to form the 60-degree angle visual device",
-      "why": "Matches the specified 60-degree angle device requirement using CSS-only decorative layers with no image dependencies (forbidden by available_imports)."
+      "what": "Left the existing <script src=\\\"scripts.js\\\" defer> tag in index.html untouched and only added 'reveal' class to the six service cards",
+      "why": "The script tag was already present with the exact placement and attributes described in the spec (marked with the ARVAD comment); only the reveal class needed to be added."
     },
     {
-      "what": "Added mobile breakpoints at 768px and 480px reducing padding, font sizes, and stacking hero actions vertically",
-      "why": "Explicit requirement for mobile responsiveness with reduced padding and font sizes on smaller screens."
+      "what": "IntersectionObserver disconnects after every observed element has activated; per-entry unobserve() runs on intersection",
+      "why": "Spec requires disconnecting the observer after animations to improve performance."
+    },
+    {
+      "what": "Fallback path adds 'active' class immediately when IntersectionObserver is unsupported",
+      "why": "Spec explicitly requires the fallback so content remains visible on older browsers."
     }
   ],
   "tools_used": ["Read", "Edit", "Write", "Bash"]
