@@ -1,15 +1,27 @@
 {
-  "files_created": ["styles.css"],
-  "files_modified": ["index.html"],
+  "files_created": [],
+  "files_modified": ["styles.css"],
   "decisions": [
     {
-      "what": "Created styles.css with @import for Saira Condensed (400,600,700) and Exo 2 (400,500,600), :root brand color custom properties, CSS reset (box-sizing, margin/padding reset, list-style none), typography scale using Saira Condensed for headings and Exo 2 for body, responsive breakpoint tokens, and utility classes (.container, .grid, .flex, .flex-col, .items-center, .justify-between).",
-      "why": "Spec 001 required a full design-system foundation with brand color custom properties, Google Fonts integration, mobile-first responsive utilities, and CSS reset."
+      "what": "Appended hero section styles before the prefers-reduced-motion media query in styles.css",
+      "why": "Preserved the existing token/reset structure at the top of the file and kept the reduced-motion query at the end so it still overrides transitions on newly added hero elements."
     },
     {
-      "what": "Added an ARVAD marker HTML comment above the existing <link rel=\"stylesheet\" href=\"styles.css\"> in index.html rather than duplicating the link tag.",
-      "why": "Spec 002 asked to add the stylesheet link after the favicon; the link already existed at line 26 (after the favicon and Google Fonts preconnect/import). Per rule 9, the marker was added while confirming the implementation, avoiding a duplicate link element."
+      "what": "Applied hero CTA styling to both .cta-button and the existing .btn-primary inside .hero",
+      "why": "index.html uses .btn.btn-primary for the hero CTA rather than a .cta-button class; scoping CTA rules to .hero ensures the specified visuals apply to actual markup without leaking to other buttons."
+    },
+    {
+      "what": "Implemented pixel-aesthetic decoration via radial-gradient dot pattern on .hero::before/::after plus a .pixel-pattern CSS Grid utility (grid-template-columns: repeat(auto-fit, 40px), gap: 40px, opacity 0.1, z-index -1)",
+      "why": "Spec calls for pixel-aesthetic patterns and a CSS Grid pixel pattern; providing both the decorative pseudo-element pattern (rendered without extra markup) and the reusable .pixel-pattern grid class satisfies both requirements."
+    },
+    {
+      "what": "Used clip-path polygon() with rotate(60deg) on hero pseudo-elements to form the 60-degree angle visual device",
+      "why": "Matches the specified 60-degree angle device requirement using CSS-only decorative layers with no image dependencies (forbidden by available_imports)."
+    },
+    {
+      "what": "Added mobile breakpoints at 768px and 480px reducing padding, font sizes, and stacking hero actions vertically",
+      "why": "Explicit requirement for mobile responsiveness with reduced padding and font sizes on smaller screens."
     }
   ],
-  "tools_used": ["Read", "Write", "Edit", "Bash"]
+  "tools_used": ["Read", "Edit", "Write", "Bash"]
 }
