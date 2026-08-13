@@ -1,0 +1,146 @@
+[
+  {
+    "id": "cs-001",
+    "title": "Transaction Monitoring System Overhaul for Regional Bank",
+    "category": "AML",
+    "thumbnail": "/images/case-studies/transaction-monitoring-thumb.jpg",
+    "image": "/images/case-studies/transaction-monitoring-hero.jpg",
+    "challenge": "A mid-sized regional bank was struggling with a legacy transaction monitoring platform that generated an overwhelming volume of false-positive alerts, creating alert fatigue among analysts and delaying detection of genuinely suspicious activity. Regulators had flagged concerns after a routine examination.",
+    "solution": "We rebuilt the alerting logic from the ground up, introducing tiered risk scoring, behavior-based typologies, and machine-learning-assisted pattern recognition. Governance workflows were redesigned to route higher-risk alerts to senior investigators, and analyst training was updated to align with the new methodology.",
+    "results": "Within nine months the bank cut false-positive rates by nearly two-thirds while surfacing significantly more true suspicious activity reports. The updated framework passed its next regulatory examination without findings and freed analyst capacity for higher-value investigative work.",
+    "metrics": [
+      { "label": "False positive reduction", "value": "-64%" },
+      { "label": "SAR quality uplift", "value": "+38%" },
+      { "label": "Analyst hours saved / week", "value": "420" },
+      { "label": "Regulatory findings", "value": "0" }
+    ],
+    "date": "2025-04-18",
+    "client": "Regional retail bank (anonymized)"
+  },
+  {
+    "id": "cs-002",
+    "title": "Terrorist Financing Risk Assessment for Money Services Business",
+    "category": "CFT",
+    "thumbnail": "/images/case-studies/cft-risk-assessment-thumb.jpg",
+    "image": "/images/case-studies/cft-risk-assessment-hero.jpg",
+    "challenge": "A cross-border money services business needed a defensible counter-financing-of-terrorism (CFT) risk assessment covering more than forty remittance corridors, including several higher-risk jurisdictions. Their existing methodology relied on outdated typologies and lacked evidentiary support.",
+    "solution": "Our team designed a corridor-level CFT risk model incorporating current FATF typologies, sanctions exposure, customer behavior indicators, and jurisdictional risk data. We documented the methodology in a regulator-ready evidence pack and delivered a remediation roadmap for higher-risk corridors.",
+    "results": "The refreshed assessment was accepted by the client's supervisory authority as a substantial improvement and became the operating baseline for enhanced due diligence programs in high-risk corridors.",
+    "metrics": [
+      { "label": "Corridors assessed", "value": "42" },
+      { "label": "High-risk corridors remediated", "value": "9" },
+      { "label": "Methodology score uplift", "value": "+51%" },
+      { "label": "Regulator acceptance", "value": "First-pass" }
+    ],
+    "date": "2025-01-27",
+    "client": "Cross-border MSB (anonymized)"
+  },
+  {
+    "id": "cs-003",
+    "title": "Real-Time Card Fraud Detection Uplift for Digital Wallet",
+    "category": "Fraud Detection",
+    "thumbnail": "/images/case-studies/fraud-detection-thumb.jpg",
+    "image": "/images/case-studies/fraud-detection-hero.jpg",
+    "challenge": "A fast-growing digital wallet provider was seeing a sharp rise in card-not-present fraud, driven by account-takeover attacks and social-engineering scams. Existing rules-based defenses could not keep pace with rapidly evolving attacker behavior.",
+    "solution": "We layered a behavioral biometrics signal, device intelligence, and a real-time scoring engine on top of the existing rules stack. Response playbooks were rewritten to enable step-up authentication and dynamic velocity limits without adding friction to legitimate customers.",
+    "results": "Chargeback rates fell sharply within one quarter, customer complaints about false declines dropped, and net authorized-push-payment fraud losses were materially reduced.",
+    "metrics": [
+      { "label": "Fraud loss reduction", "value": "-47%" },
+      { "label": "False decline reduction", "value": "-31%" },
+      { "label": "Chargeback rate", "value": "-52%" },
+      { "label": "Decision latency", "value": "< 120 ms" }
+    ],
+    "date": "2024-11-05",
+    "client": "Digital wallet provider (anonymized)"
+  },
+  {
+    "id": "cs-004",
+    "title": "Enterprise-Wide AML Risk Assessment for Universal Bank",
+    "category": "Risk Assessment",
+    "thumbnail": "/images/case-studies/enterprise-risk-thumb.jpg",
+    "image": "/images/case-studies/enterprise-risk-hero.jpg",
+    "challenge": "A universal bank operating across retail, corporate, and private banking lines needed a unified enterprise-wide AML risk assessment. Prior efforts had produced siloed, inconsistent scoring and were difficult to defend to the group's board risk committee.",
+    "solution": "We built a single, consistent risk assessment methodology covering customer, product, geography, and channel factors, and calibrated it against internal loss data and peer benchmarks. A board-level dashboard translated technical output into decision-useful narrative for governance forums.",
+    "results": "The new methodology gave leadership a shared view of residual AML risk across business lines, informed the group's control investment priorities, and became the basis for the following year's supervisory dialogue.",
+    "metrics": [
+      { "label": "Business lines aligned", "value": "3" },
+      { "label": "Risk factors modeled", "value": "27" },
+      { "label": "Board reporting cycle", "value": "Quarterly" },
+      { "label": "Control uplift funded", "value": "$4.2M" }
+    ],
+    "date": "2024-09-12",
+    "client": "Universal bank (anonymized)"
+  },
+  {
+    "id": "cs-005",
+    "title": "Sanctions Screening Remediation for Global Payments Provider",
+    "category": "AML",
+    "thumbnail": "/images/case-studies/sanctions-screening-thumb.jpg",
+    "image": "/images/case-studies/sanctions-screening-hero.jpg",
+    "challenge": "A global payments provider faced regulator concerns over sanctions screening coverage after inconsistencies were identified between its transaction, customer, and counterparty screening pipelines.",
+    "solution": "We completed a gap assessment against OFAC, UN, EU, and UK regimes; tuned matching algorithms and thresholds; and introduced a centralized fuzzy-name-matching service used by all screening pipelines. A remediation program back-tested historical activity against the corrected controls.",
+    "results": "Screening coverage gaps were closed, false-positive volumes fell materially, and the provider closed its outstanding regulatory matter within the agreed remediation window.",
+    "metrics": [
+      { "label": "Screening pipelines unified", "value": "5" },
+      { "label": "False positive reduction", "value": "-58%" },
+      { "label": "Historical alerts back-tested", "value": "1.2M" },
+      { "label": "Regulatory matter", "value": "Closed" }
+    ],
+    "date": "2024-07-22",
+    "client": "Global payments provider (anonymized)"
+  },
+  {
+    "id": "cs-006",
+    "title": "CFT Program Uplift for Crypto Asset Exchange",
+    "category": "CFT",
+    "thumbnail": "/images/case-studies/crypto-cft-thumb.jpg",
+    "image": "/images/case-studies/crypto-cft-hero.jpg",
+    "challenge": "A licensed crypto asset exchange needed to demonstrate a mature CFT program to satisfy conditions of its operating license, including robust travel-rule compliance and controls against terrorism-financing typologies specific to virtual assets.",
+    "solution": "We designed and implemented an end-to-end CFT program covering VASP counterparty due diligence, travel-rule integration, blockchain analytics-driven typology detection, and a governance operating model aligned with FATF recommendation 15.",
+    "results": "The license conditions were formally lifted, blockchain-analytics-driven investigations produced multiple actionable disclosures to authorities, and the exchange became a reference site for peers on CFT good practice.",
+    "metrics": [
+      { "label": "Travel-rule coverage", "value": "99.4%" },
+      { "label": "VASP counterparties onboarded", "value": "138" },
+      { "label": "Actionable disclosures", "value": "24" },
+      { "label": "License conditions", "value": "Lifted" }
+    ],
+    "date": "2024-05-30",
+    "client": "Licensed crypto asset exchange (anonymized)"
+  },
+  {
+    "id": "cs-007",
+    "title": "Insider Fraud Detection Program for Insurance Group",
+    "category": "Fraud Detection",
+    "thumbnail": "/images/case-studies/insider-fraud-thumb.jpg",
+    "image": "/images/case-studies/insider-fraud-hero.jpg",
+    "challenge": "An insurance group had identified a pattern of small-value insider fraud in claims handling but lacked the analytics and case-management tooling to detect it consistently across regions.",
+    "solution": "We deployed link-analysis and anomaly-detection models on top of the claims data lake, and integrated the outputs into a unified case management workflow. Front-line training was refreshed to strengthen fraud awareness in claims and underwriting teams.",
+    "results": "Detected insider fraud value rose sharply in the first year while overall investigation cycle time fell, and the group used its improved control environment as a proof-point in reinsurance negotiations.",
+    "metrics": [
+      { "label": "Detected insider fraud", "value": "+3.6x" },
+      { "label": "Investigation cycle time", "value": "-42%" },
+      { "label": "Regions covered", "value": "11" },
+      { "label": "Reinsurance premium impact", "value": "Favorable" }
+    ],
+    "date": "2024-03-14",
+    "client": "Insurance group (anonymized)"
+  },
+  {
+    "id": "cs-008",
+    "title": "AML/CFT Risk Appetite Framework for Challenger Bank",
+    "category": "Risk Assessment",
+    "thumbnail": "/images/case-studies/risk-appetite-thumb.jpg",
+    "image": "/images/case-studies/risk-appetite-hero.jpg",
+    "challenge": "A rapidly scaling challenger bank lacked a documented AML/CFT risk appetite framework, making it difficult to demonstrate to regulators and investors that growth was being pursued within tolerable financial-crime risk boundaries.",
+    "solution": "We authored a board-approved AML/CFT risk appetite framework with quantified thresholds, escalation triggers, and monthly monitoring metrics. The framework was embedded into product approval, market entry, and customer onboarding decisions.",
+    "results": "The framework gave the board a defensible view of financial-crime risk versus growth ambition, was cited positively in the bank's next regulatory examination, and became a talking point in its Series C fundraising.",
+    "metrics": [
+      { "label": "Board-approved thresholds", "value": "18" },
+      { "label": "Product approvals gated", "value": "12" },
+      { "label": "Monitoring cadence", "value": "Monthly" },
+      { "label": "Examination outcome", "value": "Favorable" }
+    ],
+    "date": "2024-01-08",
+    "client": "Challenger bank (anonymized)"
+  }
+]
