@@ -1,3 +1,4 @@
+import { AboutSection } from '../components/about/AboutSection';
 import { PortfolioGallery } from '../components/portfolio/PortfolioGallery';
 
 export default function HomePage(): JSX.Element {
@@ -35,6 +36,8 @@ export default function HomePage(): JSX.Element {
           <PortfolioGallery />
         </div>
       </section>
+
+      <AboutSection className="bg-black" />
     </main>
   );
 }
