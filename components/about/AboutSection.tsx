@@ -108,12 +108,12 @@ export function AboutSection({
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <FadeIn>
           <header className="mb-12 text-center">
-            <span className="mb-4 inline-block pixel-border border-cyber-green bg-cyber-green/10 px-3 py-1 font-mono text-xs uppercase tracking-widest text-cyber-green">
+            <span className="mb-4 inline-block pixel-border border-brand-blue bg-brand-blue/15 px-3 py-1 font-heading text-xs uppercase tracking-widest text-brand-light">
               Who We Are
             </span>
             <h2
               id="about-heading"
-              className="font-mono text-3xl sm:text-4xl lg:text-5xl leading-tight text-white"
+              className="font-heading text-3xl sm:text-4xl lg:text-5xl leading-tight text-white"
             >
               About CounterAct
             </h2>
@@ -122,7 +122,7 @@ export function AboutSection({
               className="mx-auto mt-4 h-1 w-24"
               style={{
                 backgroundImage:
-                  'linear-gradient(90deg, #00ff41 0 8px, transparent 8px 12px)',
+                  'linear-gradient(90deg, #00FD00 0 8px, transparent 8px 12px)',
                 backgroundSize: '12px 4px',
                 backgroundRepeat: 'repeat-x',
               }}
@@ -131,13 +131,13 @@ export function AboutSection({
         </FadeIn>
 
         <FadeIn delayMs={100} className="mx-auto mb-20 max-w-3xl">
-          <p className="text-center text-base sm:text-lg lg:text-xl leading-relaxed text-gray-200">
+          <p className="text-center font-body text-base sm:text-lg lg:text-xl leading-relaxed text-gray-200">
             <span className="text-cyber-green">&gt;</span> {MISSION_STATEMENT}
           </p>
         </FadeIn>
 
         <FadeIn delayMs={150} className="mb-20">
-          <h3 className="mb-8 text-center font-mono text-xl sm:text-2xl uppercase tracking-widest text-white">
+          <h3 className="mb-8 text-center font-heading text-xl sm:text-2xl uppercase tracking-widest text-white">
             Core Values
           </h3>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">

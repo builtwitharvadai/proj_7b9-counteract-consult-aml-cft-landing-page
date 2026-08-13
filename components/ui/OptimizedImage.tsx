@@ -1,10 +1,11 @@
 'use client';
 
-import Image, { type ImageProps } from 'next/image';
+import Image, { type ImageLoaderProps, type ImageProps } from 'next/image';
 import {
   Component,
   type ReactNode,
   useCallback,
+  useEffect,
   useMemo,
   useState,
 } from 'react';
@@ -20,7 +21,14 @@ import { ImageSkeleton } from './ImageSkeleton';
 
 type NextImageBaseProps = Omit<
   ImageProps,
-  'alt' | 'src' | 'placeholder' | 'blurDataURL' | 'onLoad' | 'onError'
+  | 'alt'
+  | 'src'
+  | 'placeholder'
+  | 'blurDataURL'
+  | 'onLoad'
+  | 'onError'
+  | 'onLoadingComplete'
+  | 'loader'
 >;
 
 export interface OptimizedImageProps extends NextImageBaseProps {
@@ -79,6 +87,26 @@ const aspectRatioClassMap: Record<BrandAspectRatioLabel, string> = {
 const cx = (...classes: Array<string | false | null | undefined>): string =>
   classes.filter(Boolean).join(' ');
 
+const isUnsplashSrc = (src: string): boolean =>
+  /images\.unsplash\.com/i.test(src);
+
+/**
+ * Hit Unsplash CDN directly — skips Next.js `/_next/image` proxy, which
+ * was serializing/slowing every gallery thumbnail through the local optimizer.
+ */
+const unsplashLoader = ({ src, width, quality }: ImageLoaderProps): string => {
+  try {
+    const url = new URL(src);
+    url.searchParams.set('auto', 'format');
+    url.searchParams.set('fit', 'crop');
+    url.searchParams.set('w', String(Math.min(width, 1600)));
+    url.searchParams.set('q', String(quality ?? 70));
+    return url.toString();
+  } catch {
+    return src;
+  }
+};
+
 const ErrorState = ({ alt }: { alt: string }): JSX.Element => (
   <div
     role="img"
@@ -96,7 +124,7 @@ export function OptimizedImage({
   alt,
   aspectRatio = '16:9',
   pixelBorder = false,
-  quality = IMAGE_QUALITY.default,
+  quality = IMAGE_QUALITY.thumbnail,
   priority = false,
   sizes = DEFAULT_IMAGE_SIZES,
   className,
@@ -116,6 +144,20 @@ export function OptimizedImage({
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [hasError, setHasError] = useState<boolean>(false);
   const [currentSrc, setCurrentSrc] = useState<string>(src);
+  const useCdnLoader = isUnsplashSrc(currentSrc);
+
+  useEffect(() => {
+    setCurrentSrc(src);
+    setIsLoading(true);
+    setHasError(false);
+  }, [src]);
+
+  // Never leave the skeleton up forever if a load event is missed.
+  useEffect(() => {
+    if (!isLoading) return;
+    const timer = window.setTimeout(() => setIsLoading(false), 6000);
+    return () => window.clearTimeout(timer);
+  }, [isLoading, currentSrc]);
 
   const handleLoad = useCallback((): void => {
     setIsLoading(false);
@@ -124,6 +166,7 @@ export function OptimizedImage({
   const handleError = useCallback((): void => {
     if (fallbackSrc && currentSrc !== fallbackSrc) {
       setCurrentSrc(fallbackSrc);
+      setIsLoading(true);
       return;
     }
     setHasError(true);
@@ -151,7 +194,7 @@ export function OptimizedImage({
   );
 
   const imageClasses = cx(
-    'object-cover transition-opacity duration-500 ease-out',
+    'object-cover transition-opacity duration-300 ease-out brand-photo',
     isLoading ? 'opacity-0' : 'opacity-100',
     className,
   );
@@ -159,13 +202,19 @@ export function OptimizedImage({
   const useFill = fill ?? (width === undefined && height === undefined);
 
   return (
-    <ImageErrorBoundary fallback={<div className={wrapperClasses}><ErrorState alt={alt} /></div>}>
+    <ImageErrorBoundary
+      fallback={
+        <div className={wrapperClasses}>
+          <ErrorState alt={alt} />
+        </div>
+      }
+    >
       <div className={wrapperClasses} data-pixel-border={pixelBorder || undefined}>
         {isLoading && !hasError && (
           <ImageSkeleton
             aspectRatio={aspectRatio}
             pixelBorder={pixelBorder}
-            className="absolute inset-0"
+            className="absolute inset-0 z-[1]"
           />
         )}
         {hasError ? (
@@ -179,12 +228,17 @@ export function OptimizedImage({
             sizes={sizes}
             placeholder="blur"
             blurDataURL={blurDataURL}
+            loader={useCdnLoader ? unsplashLoader : undefined}
+            onLoadingComplete={handleLoad}
             onLoad={handleLoad}
             onError={handleError}
             className={imageClasses}
             {...(useFill
               ? { fill: true }
-              : { width: width ?? ratio.width * 100, height: height ?? ratio.height * 100 })}
+              : {
+                  width: width ?? ratio.width * 100,
+                  height: height ?? ratio.height * 100,
+                })}
             {...rest}
           />
         )}
