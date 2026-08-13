@@ -127,12 +127,16 @@ export function CaseStudyModal({
 
               <div className="relative w-full">
                 <OptimizedImage
-                  src={caseStudy.image}
+                  key={caseStudy.id}
+                  src={caseStudy.thumbnail}
                   alt={`${caseStudy.title} — case study hero image`}
                   aspectRatio="16:9"
                   priority
+                  quality={75}
+                  sizes="(max-width: 896px) 100vw, 896px"
                   pixelBorder={false}
                   wrapperClassName="w-full"
+                  fallbackSrc={caseStudy.image}
                 />
               </div>
 

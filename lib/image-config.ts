@@ -54,9 +54,9 @@ export const CDN_DOMAINS: readonly string[] = [
  * pixel-aesthetic design system.
  */
 const BRAND_COLORS = {
-  matrixBlack: '#0A0F0D',
+  matrixBlack: '#131313',
   cyberGreenDark: '#0B3B2E',
-  cyberGreen: '#00FF9C',
+  cyberGreen: '#00FD00',
 } as const;
 
 const toBase64 = (value: string): string =>

@@ -18,7 +18,8 @@ export const SERVICES: ReadonlyArray<Service> = [
       'Model tuning informed by front-line investigations',
       'Regulator-ready audit trails and SAR quality reviews',
     ],
-    image: '/images/lifestyle/aml-monitoring.jpg',
+    image:
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
     imageAlt:
       'Compliance analyst reviewing real-time transaction-monitoring dashboards in a modern financial-institution operations center',
   },
@@ -32,7 +33,8 @@ export const SERVICES: ReadonlyArray<Service> = [
       'Correspondent-banking risk reviews and remediation',
       'UN/OFAC/EU sanctions program design and testing',
     ],
-    image: '/images/lifestyle/cft-prevention.jpg',
+    image:
+      'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80',
     imageAlt:
       'Global-payments team collaborating on sanctions-screening controls to interdict terrorist-financing flows across correspondent banking corridors',
   },
@@ -46,7 +48,8 @@ export const SERVICES: ReadonlyArray<Service> = [
       'Model governance, drift monitoring, and validation',
       'Playbooks and MI to accelerate investigator throughput',
     ],
-    image: '/images/lifestyle/fraud-detection.jpg',
+    image:
+      'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80',
     imageAlt:
       'Data scientists and fraud investigators analyzing behavioral analytics on multiple screens to intercept sophisticated payment fraud',
   },
@@ -60,7 +63,8 @@ export const SERVICES: ReadonlyArray<Service> = [
       'Control-effectiveness testing tied to regulator expectations',
       'Board-ready reporting and remediation planning',
     ],
-    image: '/images/lifestyle/risk-assessment.jpg',
+    image:
+      'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80',
     imageAlt:
       'Executive leadership team reviewing an enterprise-wide financial-crime risk assessment with prioritized remediation roadmaps',
   },

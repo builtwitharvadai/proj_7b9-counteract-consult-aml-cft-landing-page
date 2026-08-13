@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useCallback } from 'react';
+import { useCallback, useRef } from 'react';
 
 import type { CaseStudy } from '../../types/case-study';
 import { OptimizedImage } from '../ui/OptimizedImage';
@@ -15,14 +15,41 @@ export interface CaseStudyCardProps {
 const cx = (...classes: Array<string | false | null | undefined>): string =>
   classes.filter(Boolean).join(' ');
 
+/** Warm Unsplash CDN cache for modal-sized display (no Next proxy). */
+function preloadModalImage(src: string): void {
+  if (typeof window === 'undefined' || !src) return;
+  try {
+    const url = new URL(src);
+    url.searchParams.set('auto', 'format');
+    url.searchParams.set('fit', 'crop');
+    url.searchParams.set('w', '1080');
+    url.searchParams.set('q', '70');
+    const img = new window.Image();
+    img.decoding = 'async';
+    img.src = url.toString();
+  } catch {
+    const img = new window.Image();
+    img.src = src;
+  }
+}
+
 export function CaseStudyCard({
   caseStudy,
   onOpen,
   className,
 }: CaseStudyCardProps): JSX.Element {
+  const preloaded = useRef(false);
+
+  const warmImage = useCallback((): void => {
+    if (preloaded.current) return;
+    preloaded.current = true;
+    preloadModalImage(caseStudy.thumbnail);
+  }, [caseStudy.thumbnail]);
+
   const handleOpen = useCallback((): void => {
+    warmImage();
     onOpen(caseStudy);
-  }, [caseStudy, onOpen]);
+  }, [caseStudy, onOpen, warmImage]);
 
   const handleKeyDown = useCallback(
     (event: React.KeyboardEvent<HTMLDivElement>): void => {
@@ -43,6 +70,8 @@ export function CaseStudyCard({
       aria-label={ariaLabel}
       onClick={handleOpen}
       onKeyDown={handleKeyDown}
+      onMouseEnter={warmImage}
+      onFocus={warmImage}
       whileHover={{ scale: 1.02 }}
       whileFocus={{ scale: 1.02 }}
       whileTap={{ scale: 0.99 }}
@@ -59,6 +88,8 @@ export function CaseStudyCard({
         alt={`${caseStudy.title} — ${caseStudy.category} case study thumbnail`}
         aspectRatio="4:3"
         pixelBorder={false}
+        quality={70}
+        sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 400px"
         wrapperClassName="relative w-full"
       />
 

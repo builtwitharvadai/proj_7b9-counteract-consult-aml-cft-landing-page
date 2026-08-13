@@ -46,7 +46,7 @@ interface LazyCardProps {
 
 function LazyCard({ caseStudy, index, onOpen }: LazyCardProps): JSX.Element {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const [isVisible, setIsVisible] = useState<boolean>(index < 3);
+  const [isVisible, setIsVisible] = useState<boolean>(index < 8);
 
   useEffect(() => {
     if (isVisible || typeof IntersectionObserver === 'undefined') {
@@ -66,7 +66,7 @@ function LazyCard({ caseStudy, index, onOpen }: LazyCardProps): JSX.Element {
           }
         }
       },
-      { rootMargin: '200px 0px', threshold: 0.05 },
+      { rootMargin: '400px 0px', threshold: 0.01 },
     );
     observer.observe(node);
     return () => observer.disconnect();

@@ -20,9 +20,10 @@ export interface EnhancedHeroProps {
 const DEFAULT_HEADLINE = 'Compliance is our priority. Trust is our promise.';
 const DEFAULT_SUBHEADLINE =
   'World-class AML/CFT expertise for financial institutions — combining deep regulatory knowledge, cutting-edge technology, and unwavering integrity to fortify your defenses against financial crime.';
-const DEFAULT_BACKGROUND_IMAGE = '/images/hero/hero-background.jpg';
+const DEFAULT_BACKGROUND_IMAGE =
+  'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2400&q=80';
 const DEFAULT_BACKGROUND_ALT =
-  'Compliance professionals collaborating in a modern financial technology environment';
+  'Modern financial district skyline representing institutional compliance and trust';
 
 const STAGGER_KEYFRAMES = `
 @keyframes counteract-hero-fade-in {
@@ -94,7 +95,7 @@ export function EnhancedHero({
   );
 
   const overlayGradient =
-    'linear-gradient(180deg, rgba(19,19,19,0.90) 0%, rgba(19,19,19,0.75) 40%, rgba(19,19,19,0.55) 70%, rgba(19,19,19,0.30) 100%)';
+    'linear-gradient(180deg, rgba(19,19,19,0.92) 0%, rgba(26,11,104,0.55) 42%, rgba(19,19,19,0.50) 72%, rgba(19,19,19,0.28) 100%)';
 
   return (
     <section
@@ -122,12 +123,19 @@ export function EnhancedHero({
         style={{ backgroundImage: overlayGradient }}
       />
 
+      {/* 60° brand angle device */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-16 top-0 z-10 h-[55%] w-[38%] bg-brand-blue/15"
+        style={{ clipPath: 'polygon(40% 0, 100% 0, 100% 100%, 0 100%)' }}
+      />
+
       <ParticleBackground className="z-20" />
 
       <div className="relative z-30 mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-28">
         <div className="max-w-3xl">
           <StaggerItem delay={0.05}>
-            <div className="mb-6 inline-flex items-center gap-2 pixel-border border-cyber-green bg-cyber-green/10 px-3 py-1 font-mono text-xs uppercase tracking-widest text-cyber-green">
+            <div className="mb-6 inline-flex items-center gap-2 pixel-border border-brand-blue bg-brand-blue/15 px-3 py-1 font-heading text-xs uppercase tracking-widest text-brand-light">
               <span aria-hidden="true">▮</span>
               <span>CounterAct Consult</span>
             </div>
@@ -136,14 +144,14 @@ export function EnhancedHero({
           <StaggerItem delay={0.2}>
             <h1
               id="hero-heading"
-              className="font-mono text-3xl leading-tight text-white sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
+              className="font-heading text-3xl leading-tight text-white sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
             >
               {headline}
             </h1>
           </StaggerItem>
 
           <StaggerItem delay={0.4} className="mt-6">
-            <p className="max-w-2xl text-sm leading-relaxed text-gray-200 sm:text-base md:text-lg">
+            <p className="max-w-2xl font-body text-sm leading-relaxed text-gray-200 sm:text-base md:text-lg">
               {subheadline}
             </p>
           </StaggerItem>
@@ -152,13 +160,13 @@ export function EnhancedHero({
             <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
               <a
                 href={primaryCtaHref}
-                className="pixel-border inline-flex items-center justify-center border-cyber-green bg-cyber-green px-6 py-3 font-mono text-sm font-semibold uppercase tracking-widest text-matrix-black transition-transform duration-150 ease-out hover:-translate-y-0.5 hover:bg-cyber-green/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyber-green"
+                className="pixel-border inline-flex items-center justify-center border-cyber-green bg-cyber-green px-6 py-3 font-heading text-sm font-semibold uppercase tracking-widest text-matrix-black transition-transform duration-150 ease-out hover:-translate-y-0.5 hover:bg-cyber-green/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue"
               >
                 {primaryCtaLabel}
               </a>
               <a
                 href={secondaryCtaHref}
-                className="pixel-border inline-flex items-center justify-center border-cyber-green bg-transparent px-6 py-3 font-mono text-sm font-semibold uppercase tracking-widest text-cyber-green transition-transform duration-150 ease-out hover:-translate-y-0.5 hover:bg-cyber-green/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyber-green"
+                className="pixel-border inline-flex items-center justify-center border-brand-light bg-transparent px-6 py-3 font-heading text-sm font-semibold uppercase tracking-widest text-brand-light transition-transform duration-150 ease-out hover:-translate-y-0.5 hover:border-cyber-green hover:bg-cyber-green/10 hover:text-cyber-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue"
               >
                 {secondaryCtaLabel}
               </a>
