@@ -1,45 +1,42 @@
 {
   "files_created": [
-    "types/team.ts",
-    "data/team-members.ts",
-    "components/about/ParallaxBackground.tsx",
-    "components/about/TeamMemberCard.tsx",
-    "components/about/TeamGrid.tsx",
-    "components/about/AboutSection.tsx",
-    "public/images/team/.gitkeep"
+    "components/hero/ParticleBackground.tsx",
+    "components/ui/ImageWithOverlay.tsx",
+    "components/hero/EnhancedHero.tsx",
+    "components/services/ServiceCard.tsx",
+    "data/services.ts",
+    "public/images/hero/.gitkeep",
+    "public/images/lifestyle/.gitkeep"
   ],
   "files_modified": [
     "app/page.tsx"
   ],
   "decisions": [
     {
-      "what": "Implemented parallax via native scroll listener + requestAnimationFrame instead of Framer Motion's useScroll/useTransform.",
-      "why": "The project has no framer-motion dependency listed among available imports; a lightweight scroll+rAF implementation preserves the requested translateY(scroll * factor) behavior, respects will-change: transform, and honors prefers-reduced-motion and the mobile media-query reduction the spec called for."
+      "what": "Used CSS keyframe animations for particle float and hero stagger instead of Framer Motion.",
+      "why": "The project has no package.json in the working tree to verify a framer-motion dependency, and existing components like ParallaxBackground already use CSS/JS-driven animations. CSS keyframes stay dependency-free and honor prefers-reduced-motion."
     },
     {
-      "what": "Reduced parallax on mobile rather than disabling it outright.",
-      "why": "Spec says 'disable/reduce parallax on small screens'; a 0.25x factor is used on mobile to keep decorative motion subtle without eliminating it entirely, while prefers-reduced-motion still fully disables it."
+      "what": "Treated 'modify' specs for data/services.ts and components/services/ServiceCard.tsx as create because neither file previously existed.",
+      "why": "The target files were absent from the repo, so the specifications had to be materialized as new files. The Service interface was defined inline in data/services.ts to keep types colocated with the data they describe."
     },
     {
-      "what": "Team card flip built with pure CSS 3D transforms and React state, not a motion library.",
-      "why": "Keeps zero new runtime dependencies while meeting the spec's perspective/transform-style/rotateY(180deg) requirements. Click and Enter/Space toggle flip; ARIA role='button' and aria-pressed reflect state."
+      "what": "Rendered ParticleBackground layer with an inline <style> block containing the counteract-particle-float keyframes.",
+      "why": "The existing codebase has no shared global animation utility; inlining keyframes co-locates the animation with its consumer while still respecting will-change, prefers-reduced-motion, and mobile particle-count reduction (50 desktop / 20 mobile)."
     },
     {
-      "what": "Intersection Observer used directly for scroll-triggered fade-in with 100ms stagger.",
-      "why": "Matches spec literally ('observe each card', '100ms increments') and avoids external animation libs. Falls back to visible=true when IntersectionObserver isn't available (SSR/older environments)."
-    },
-    {
-      "what": "TEAM_MEMBERS uses '/images/team/*.png' paths that resolve against the public/images/team directory.",
-      "why": "OptimizedImage feeds src through the configured next/image loader; keeping paths under /images/team lets designers drop 400x400 PNGs in without further code changes, matching the spec for the placeholder directory."
-    },
-    {
-      "what": "Did not create an accompanying README.md next to public/images/team/.gitkeep.",
-      "why": "Spec 008 target file is only the .gitkeep; the prompt's global 'NO MARKDOWN FILES' rule forbids creating .md files, so the README described in the spec text was omitted in favor of the explicit no-markdown constraint."
+      "what": "Alternated ServiceCard image position with index parity (even = left, odd = right).",
+      "why": "The spec calls for alternating image position for visual interest across a service list; deriving the layout from an optional index prop keeps the component stateless and predictable while allowing consumers to override via imagePosition."
     }
   ],
   "tools_used": [
     "Read",
     "Write",
-    "Edit"
+    "Edit",
+    "Bash",
+    "Grep",
+    "Glob",
+    "TodoWrite",
+    "ToolSearch"
   ]
 }

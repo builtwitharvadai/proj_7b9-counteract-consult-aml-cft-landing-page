@@ -1,9 +1,12 @@
 import { AboutSection } from '../components/about/AboutSection';
+import { EnhancedHero } from '../components/hero/EnhancedHero';
 import { PortfolioGallery } from '../components/portfolio/PortfolioGallery';
 
 export default function HomePage(): JSX.Element {
   return (
     <main className="min-h-screen bg-matrix-black text-white">
+      <EnhancedHero />
+
       <section
         id="portfolio"
         aria-labelledby="portfolio-heading"
