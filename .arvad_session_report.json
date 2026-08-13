@@ -1,35 +1,51 @@
 {
   "files_created": [
-    "assets/images/corporate-office.webp",
-    "assets/images/financial-security.webp"
+    "lib/image-config.ts",
+    "components/ui/OptimizedImage.tsx",
+    "components/ui/ImageSkeleton.tsx",
+    "lib/blur-placeholder.ts",
+    "lib/image-loader.ts"
   ],
   "files_modified": [
-    "styles.css",
-    "index.html",
-    "README.md"
+    "next.config.js"
+  ],
+  "files_skipped": [
+    "docs/IMAGE_GUIDELINES.md"
   ],
   "decisions": [
     {
-      "what": "Replaced existing site-header/site-footer markup with spec's .header/.footer + .logo-container/.social-links/.copyright structure",
-      "why": "Spec explicitly requested those class names and internal structure; implementing the spec verbatim per NO ASSUMPTIONS rule"
+      "what": "Wrote next.config.js from scratch with the specified images configuration (deviceSizes, imageSizes, WebP/AVIF formats, minimumCacheTTL 60, dangerouslyAllowSVG with CSP).",
+      "why": "The file did not previously exist in the repo, so 'modify' effectively meant creating a Next.js config that satisfies the spec's image-optimization requirements."
     },
     {
-      "what": "Wrapped edu-card images in <picture> with WebP <source> and WebP <img> fallback",
-      "why": "Spec allowed either direct .webp swap or <picture> element; used <picture> for progressive enhancement while keeping descriptive alt text on every image"
+      "what": "Exposed BRAND_ASPECT_RATIOS, IMAGE_QUALITY, BREAKPOINT_SIZES, BLUR_DATA_URL, and CDN_DOMAINS from lib/image-config.ts and added a small buildResponsiveSizes helper.",
+      "why": "The spec explicitly lists these exports; the sizes helper is needed for the DEFAULT_IMAGE_SIZES constant consumed by OptimizedImage."
     },
     {
-      "what": "Generated 1x1 WebP files by converting the existing 1x1 JPG placeholders using Pillow at quality 85",
-      "why": "Source JPGs in the repo are 1x1 offline placeholders; matched that convention so dimensions and file format stay consistent with the existing pattern documented in the learned context"
+      "what": "OptimizedImage wraps next/image with an ImageErrorBoundary, blur placeholder, ImageSkeleton overlay, alt-text guard, and optional pixel-border wrapper class.",
+      "why": "The spec enumerates each of these features; the boundary + error state provides the required 'error boundary for failed loads'."
     },
     {
-      "what": "Extended styles.css with .header, .footer, .footer .social-links, .footer .social-link, .footer .copyright, and small-screen media queries",
-      "why": "Spec called for sticky header with logo clear space, dark-purple footer with 48px social circles, light-blue copyright, and final responsive polish"
+      "what": "ImageSkeleton uses Tailwind animate-pulse plus a keyframe shimmer built from brand cyber-green / matrix-black tokens and toggles a 'pixel-border' utility class.",
+      "why": "Matches the spec's pixel-aesthetic requirement and stays framework-agnostic to whatever Tailwind theme provides those tokens."
+    },
+    {
+      "what": "blur-placeholder.ts exports shimmer(), toBase64(), and getBlurDataURL() exactly as named in the spec.",
+      "why": "Downstream consumers (including OptimizedImage) rely on the specified export names; matching them keeps the API contract stable."
+    },
+    {
+      "what": "Skipped docs/IMAGE_GUIDELINES.md.",
+      "why": "The top-level process rules include 'NO MARKDOWN FILES - Never create any .md files (README, CHANGELOG, docs, etc.)'. This global constraint overrides the individual spec that requested a docs markdown file."
+    },
+    {
+      "what": "image-loader.ts implements format negotiation (AVIF/WebP/auto), Cloudinary-native transformations for res.cloudinary.com, a generic query-string CDN path for other whitelisted hosts, and routes local paths through /_next/image.",
+      "why": "The spec asked for a custom loader that constructs optimized CDN URLs, handles local + remote images, and negotiates format based on browser support."
     }
   ],
   "tools_used": [
     "Read",
-    "Edit",
-    "Write",
-    "Bash"
+    "Grep",
+    "Bash",
+    "Write"
   ]
 }
