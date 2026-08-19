@@ -7,9 +7,12 @@
 
 :root {
   /* Core blue brand palette */
-  --color-primary: #0066cc;
-  --color-secondary: #004a99;
-  --color-accent: #3399ff;
+  --color-brand-blue: #0066cc;
+  --color-brand-blue-light: #3399ff;
+  --color-brand-blue-dark: #004a99;
+  --color-primary: var(--color-brand-blue);
+  --color-secondary: var(--color-brand-blue-dark);
+  --color-accent: var(--color-brand-blue-light);
   --color-dark: #002b5c;
   --color-light: #e6f2ff;
 
@@ -71,10 +74,16 @@
   --color-focus-ring: var(--color-accent);
 
   /* Feedback colors */
-  --color-success: #0f9d58;
+  --color-success: var(--color-brand-blue);
   --color-warning: #f4b400;
   --color-error: #d93025;
   --color-info: var(--color-primary);
+
+  /* Selection & link colors — brand blue */
+  --color-link: var(--color-brand-blue);
+  --color-link-hover: var(--color-brand-blue-dark);
+  --color-selection-bg: var(--color-brand-blue);
+  --color-selection-text: #ffffff;
 
   /* Typography */
   --font-heading: 'Saira Condensed', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
@@ -126,6 +135,22 @@
 *:focus-visible {
   outline: 2px solid var(--color-focus-ring);
   outline-offset: 2px;
+}
+
+a {
+  color: var(--color-link);
+  text-decoration-color: var(--color-link);
+  transition: color var(--transition-base);
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--color-link-hover);
+}
+
+::selection {
+  background-color: var(--color-selection-bg);
+  color: var(--color-selection-text);
 }
 
 @media (prefers-reduced-motion: reduce) {
