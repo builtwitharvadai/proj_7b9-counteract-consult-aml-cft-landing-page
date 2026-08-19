@@ -1,0 +1,120 @@
+/*
+ * Button component — CounterAct Consult
+ * WCAG AA compliant color scheme for primary CTAs.
+ * Primary Blue (#2C3EF8) background with White (#FFFFFF) text
+ * meets AA contrast requirements.
+ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-heading, inherit);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 1.2;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease,
+    color 200ms ease,
+    box-shadow 200ms ease,
+    transform 200ms ease;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn[disabled],
+.btn.is-disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.6;
+  box-shadow: none;
+}
+
+/* ---------- Primary CTA (Get Started) ---------- */
+
+.btn-primary,
+.cta-button {
+  background-color: #2C3EF8;
+  color: #FFFFFF;
+  border-color: #2C3EF8;
+}
+
+.btn-primary:hover,
+.cta-button:hover {
+  background-color: #2332C6;
+  border-color: #2332C6;
+  color: #FFFFFF;
+}
+
+.btn-primary:focus,
+.cta-button:focus {
+  background-color: #2332C6;
+  border-color: #2332C6;
+  color: #FFFFFF;
+  outline: 3px solid #FFD700;
+  outline-offset: 2px;
+}
+
+.btn-primary:focus-visible,
+.cta-button:focus-visible {
+  outline: 3px solid #FFD700;
+  outline-offset: 2px;
+}
+
+.btn-primary:active,
+.cta-button:active {
+  background-color: #1B27A3;
+  border-color: #1B27A3;
+  color: #FFFFFF;
+}
+
+.btn-primary[disabled],
+.btn-primary.is-disabled,
+.cta-button[disabled],
+.cta-button.is-disabled {
+  background-color: #8892E6;
+  border-color: #8892E6;
+  color: #FFFFFF;
+}
+
+/* ---------- Sizes ---------- */
+
+.btn--sm {
+  padding: 0.45rem 0.9rem;
+  font-size: 0.8125rem;
+}
+
+.btn--lg {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+.btn--block {
+  width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .btn-primary,
+  .cta-button {
+    transition: none;
+  }
+
+  .btn:active,
+  .btn-primary:active,
+  .cta-button:active {
+    transform: none;
+  }
+}
