@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from 'react';
 
 import { CORE_VALUES, MISSION_STATEMENT } from '../../data/team-members';
 import { ParallaxBackground } from './ParallaxBackground';
-import { TeamGrid } from './TeamGrid';
 
 export interface AboutSectionProps {
   className?: string;
@@ -163,19 +162,6 @@ export function AboutSection({
           </div>
         </FadeIn>
 
-        <FadeIn delayMs={100}>
-          <header className="mb-10 text-center">
-            <h3 className="font-mono text-2xl sm:text-3xl leading-tight text-white">
-              Meet the Team
-            </h3>
-            <p className="mx-auto mt-3 max-w-2xl text-sm sm:text-base leading-relaxed text-gray-300">
-              Compliance leaders, investigators, and technologists who&apos;ve
-              built the AML/CFT programs regulators trust.
-            </p>
-          </header>
-        </FadeIn>
-
-        <TeamGrid />
       </div>
     </section>
   );
