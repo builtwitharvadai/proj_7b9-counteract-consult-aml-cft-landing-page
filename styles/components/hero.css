@@ -1,0 +1,267 @@
+/*
+ * Hero component — CounterAct Consult
+ * Uses the blue brand palette defined in styles/globals.css.
+ */
+
+.hero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 2rem;
+  background: linear-gradient(
+    180deg,
+    var(--color-light) 0%,
+    var(--color-white) 100%
+  );
+  color: var(--color-dark);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  right: -15%;
+  width: 60%;
+  height: 120%;
+  background: linear-gradient(
+    135deg,
+    rgba(51, 153, 255, 0.18) 0%,
+    rgba(0, 102, 204, 0.1) 100%
+  );
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%);
+  transform: rotate(60deg);
+  transform-origin: top right;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -20%;
+  left: -10%;
+  width: 45%;
+  height: 80%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(0, 102, 204, 0.15) 1.5px,
+      transparent 2px
+    );
+  background-size: 24px 24px;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+  max-width: 60rem;
+}
+
+.hero .eyebrow {
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.hero h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  font-weight: 700;
+  color: var(--color-dark);
+  line-height: 1.1;
+  text-align: center;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+  margin: 0;
+}
+
+.hero h1 .highlight {
+  color: var(--color-primary);
+}
+
+.hero p,
+.hero .hero-subtext {
+  font-family: var(--font-body);
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  color: var(--color-neutral-700);
+  margin-top: 1.5rem;
+  max-width: 50rem;
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.hero .cta-button,
+.hero .btn-primary {
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: 1rem 2.5rem;
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 600;
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-slow);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  will-change: transform;
+}
+
+.hero .cta-button:hover,
+.hero .btn-primary:hover,
+.hero .cta-button:focus-visible,
+.hero .btn-primary:focus-visible {
+  transform: scale(1.05);
+  background: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+  color: var(--color-white);
+  box-shadow: 0 8px 20px rgba(0, 43, 92, 0.3);
+}
+
+.hero .cta-button:active,
+.hero .btn-primary:active {
+  transform: scale(0.98);
+  background: var(--color-primary-active);
+  border-color: var(--color-primary-active);
+}
+
+.hero .btn-secondary {
+  background: transparent;
+  color: var(--color-secondary);
+  padding: 1rem 2.5rem;
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 600;
+  border: 2px solid var(--color-secondary);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-slow);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.hero .btn-secondary:hover,
+.hero .btn-secondary:focus-visible {
+  background: var(--color-secondary);
+  color: var(--color-white);
+  transform: scale(1.03);
+}
+
+.hero .btn-secondary:active {
+  transform: scale(0.98);
+  background: var(--color-secondary-active);
+  border-color: var(--color-secondary-active);
+}
+
+/* Pixel-aesthetic decorative shapes */
+.hero .angle-device {
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  background: linear-gradient(
+    60deg,
+    var(--color-primary),
+    var(--color-accent)
+  );
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  opacity: 0.1;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hero .pixel-dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    circle,
+    var(--color-blue-200) 1px,
+    transparent 1px
+  );
+  background-size: 32px 32px;
+  opacity: 0.35;
+  z-index: -1;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 70vh;
+    padding: 80px 1.25rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 10vw, 3.5rem);
+    letter-spacing: -0.015em;
+  }
+
+  .hero p,
+  .hero .hero-subtext {
+    font-size: clamp(1rem, 3.5vw, 1.25rem);
+    margin-top: 1rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 20rem;
+    margin-inline: auto;
+  }
+
+  .hero .cta-button,
+  .hero .btn-primary,
+  .hero .btn-secondary {
+    padding: 0.875rem 1.75rem;
+    font-size: 1rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 64px 1rem;
+    min-height: 60vh;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.75rem, 11vw, 2.5rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero .cta-button:hover,
+  .hero .btn-primary:hover,
+  .hero .btn-secondary:hover {
+    transform: none;
+  }
+}

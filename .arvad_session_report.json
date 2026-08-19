@@ -1,41 +1,46 @@
 {
   "files_created": [
-    "components/hero/ParticleBackground.tsx",
-    "components/ui/ImageWithOverlay.tsx",
-    "components/hero/EnhancedHero.tsx",
-    "components/services/ServiceCard.tsx",
-    "data/services.ts",
-    "public/images/hero/.gitkeep",
-    "public/images/lifestyle/.gitkeep"
+    "styles/globals.css",
+    "styles/components/header.css",
+    "styles/components/hero.css",
+    "styles/components/services.css",
+    "styles/components/footer.css",
+    "styles/components/button.css",
+    "docs/brand-guide.md",
+    "styles/components/card.css"
   ],
-  "files_modified": [
-    "app/page.tsx"
-  ],
+  "files_modified": [],
   "decisions": [
     {
-      "what": "Used CSS keyframe animations for particle float and hero stagger instead of Framer Motion.",
-      "why": "The project has no package.json in the working tree to verify a framer-motion dependency, and existing components like ParallaxBackground already use CSS/JS-driven animations. CSS keyframes stay dependency-free and honor prefers-reduced-motion."
+      "what": "Defined semantic blue palette tokens in styles/globals.css: --color-primary #0066CC, --color-secondary #004A99, --color-accent #3399FF, --color-dark #002B5C, --color-light #E6F2FF, plus a 50-900 blue scale and neutral scale.",
+      "why": "Task 001 explicitly required the new blue brand palette with semantic naming and full state coverage (hover/active/disabled/focus) for interactive elements; a token file must be authoritative for downstream component files to reference via var()."
     },
     {
-      "what": "Treated 'modify' specs for data/services.ts and components/services/ServiceCard.tsx as create because neither file previously existed.",
-      "why": "The target files were absent from the repo, so the specifications had to be materialized as new files. The Service interface was defined inline in data/services.ts to keep types colocated with the data they describe."
+      "what": "Introduced interactive-state tokens (--color-primary-hover, -active, -focus, -disabled and parallel tokens for secondary/accent) plus a --shadow-focus 3px ring using the accent color at 35% alpha.",
+      "why": "Component specs (buttons, header, footer, cards) each require WCAG AA-compliant hover/active/focus/disabled states — centralizing these avoids color drift across components."
     },
     {
-      "what": "Rendered ParticleBackground layer with an inline <style> block containing the counteract-particle-float keyframes.",
-      "why": "The existing codebase has no shared global animation utility; inlining keyframes co-locates the animation with its consumer while still respecting will-change, prefers-reduced-motion, and mobile particle-count reduction (50 desktop / 20 mobile)."
+      "what": "Created target files at the exact specified paths (styles/globals.css, styles/components/*.css, docs/brand-guide.md) even though those paths did not previously exist in the repo.",
+      "why": "The specifications identify these as MODIFY operations at specific target paths; the target path is authoritative and must contain the produced content."
     },
     {
-      "what": "Alternated ServiceCard image position with index parity (even = left, odd = right).",
-      "why": "The spec calls for alternating image position for visual interest across a service list; deriving the layout from an optional index prop keeps the component stateless and predictable while allowing consumers to override via imagePosition."
+      "what": "Preserved the pixel-aesthetic distinctive design system (pixel-dot backgrounds, striped accent strips, angle-device shapes, pixel corner markers on cards) while re-tinting them to blue shades.",
+      "why": "The task description mandates preserving the distinctive pixel-aesthetic while adopting the blue palette."
+    },
+    {
+      "what": "Documented WCAG contrast ratios for every recommended color pairing in docs/brand-guide.md and flagged Accent Blue as unsafe for body text on white.",
+      "why": "Task 007 requires explicit accessibility notes with contrast ratios; calling out unsafe pairings prevents accidental misuse."
+    },
+    {
+      "what": "Included the brand promise 'Compliance is our priority. Trust is our promise.' at the top of brand-guide.md and tied palette rationale to it.",
+      "why": "Task 007 explicitly asks for documentation of the rationale for the blue palette and how it supports the brand promise."
     }
   ],
   "tools_used": [
     "Read",
-    "Write",
-    "Edit",
     "Bash",
     "Grep",
-    "Glob",
+    "Write",
     "TodoWrite",
     "ToolSearch"
   ]

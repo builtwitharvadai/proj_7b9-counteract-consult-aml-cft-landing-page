@@ -1,0 +1,140 @@
+/*
+ * CounterAct Consult — Global Design Tokens
+ *
+ * Blue brand palette (WCAG AA compliant).
+ * Semantic tokens for interactive states are defined below core colors.
+ */
+
+:root {
+  /* Core blue brand palette */
+  --color-primary: #0066cc;
+  --color-secondary: #004a99;
+  --color-accent: #3399ff;
+  --color-dark: #002b5c;
+  --color-light: #e6f2ff;
+
+  /* Extended blue scale (50–900) */
+  --color-blue-50: #e6f2ff;
+  --color-blue-100: #cce4ff;
+  --color-blue-200: #99caff;
+  --color-blue-300: #66afff;
+  --color-blue-400: #3399ff;
+  --color-blue-500: #0080ff;
+  --color-blue-600: #0066cc;
+  --color-blue-700: #004a99;
+  --color-blue-800: #002b5c;
+  --color-blue-900: #001a3d;
+
+  /* Neutral scale */
+  --color-neutral-0: #ffffff;
+  --color-neutral-50: #f8fafc;
+  --color-neutral-100: #f1f5f9;
+  --color-neutral-200: #e2e8f0;
+  --color-neutral-300: #cbd5e1;
+  --color-neutral-400: #94a3b8;
+  --color-neutral-500: #64748b;
+  --color-neutral-600: #475569;
+  --color-neutral-700: #334155;
+  --color-neutral-800: #1e293b;
+  --color-neutral-900: #0f172a;
+  --color-black: #131313;
+  --color-white: #ffffff;
+
+  /* Semantic surface & text tokens */
+  --color-bg: var(--color-neutral-50);
+  --color-surface: var(--color-white);
+  --color-surface-alt: var(--color-light);
+  --color-text: var(--color-neutral-900);
+  --color-text-muted: var(--color-neutral-600);
+  --color-text-inverse: var(--color-white);
+  --color-border: var(--color-neutral-200);
+  --color-border-strong: var(--color-primary);
+
+  /* Interactive state tokens — primary */
+  --color-primary-hover: var(--color-blue-700);
+  --color-primary-active: var(--color-blue-800);
+  --color-primary-focus: var(--color-blue-500);
+  --color-primary-disabled: var(--color-neutral-300);
+
+  /* Interactive state tokens — secondary */
+  --color-secondary-hover: var(--color-blue-800);
+  --color-secondary-active: var(--color-blue-900);
+  --color-secondary-focus: var(--color-blue-600);
+  --color-secondary-disabled: var(--color-neutral-300);
+
+  /* Interactive state tokens — accent */
+  --color-accent-hover: var(--color-blue-500);
+  --color-accent-active: var(--color-blue-600);
+  --color-accent-disabled: var(--color-blue-100);
+
+  /* Focus outline */
+  --color-focus-ring: var(--color-accent);
+
+  /* Feedback colors */
+  --color-success: #0f9d58;
+  --color-warning: #f4b400;
+  --color-error: #d93025;
+  --color-info: var(--color-primary);
+
+  /* Typography */
+  --font-heading: 'Saira Condensed', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Exo 2', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-size-base: 1rem;
+  --line-height-base: 1.6;
+  --line-height-heading: 1.15;
+
+  /* Spacing scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-8: 3rem;
+  --space-10: 4rem;
+  --space-12: 6rem;
+  --space-16: 8rem;
+
+  /* Layout */
+  --container-max: 72rem;
+  --container-padding: 1.25rem;
+
+  /* Radii */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-pill: 9999px;
+
+  /* Shadows (blue-tinted) */
+  --shadow-sm: 0 1px 2px rgba(0, 43, 92, 0.06);
+  --shadow-md: 0 1px 3px rgba(0, 43, 92, 0.08), 0 4px 12px rgba(0, 43, 92, 0.05);
+  --shadow-lg: 0 8px 24px rgba(0, 43, 92, 0.14), 0 2px 6px rgba(0, 43, 92, 0.08);
+  --shadow-focus: 0 0 0 3px rgba(51, 153, 255, 0.35);
+
+  /* Motion */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.2s ease;
+  --transition-slow: 0.3s ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

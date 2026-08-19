@@ -1,0 +1,164 @@
+/*
+ * Header component — CounterAct Consult
+ * Uses the blue brand palette defined in styles/globals.css.
+ */
+
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: var(--color-white);
+  color: var(--color-dark);
+  padding: 1rem 2rem;
+  border-bottom: 2px solid var(--color-primary);
+  box-shadow: var(--shadow-sm);
+  z-index: 100;
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  gap: 1.5rem;
+}
+
+.header .logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  background: var(--color-light);
+  border-radius: var(--radius-sm);
+}
+
+.header .logo {
+  height: 60px;
+  width: auto;
+  min-height: 50px;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.header__nav a {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-dark);
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 2px solid transparent;
+  transition:
+    color var(--transition-base),
+    border-color var(--transition-base),
+    background var(--transition-base);
+}
+
+.header__nav a:hover,
+.header__nav a:focus-visible {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-accent);
+}
+
+.header__nav a.is-active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+.header__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition:
+    background var(--transition-base),
+    border-color var(--transition-base),
+    color var(--transition-base);
+}
+
+.header__cta:hover,
+.header__cta:focus-visible {
+  background: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+  color: var(--color-white);
+}
+
+.header__cta:active {
+  background: var(--color-primary-active);
+  border-color: var(--color-primary-active);
+}
+
+.header__cta[disabled],
+.header__cta.is-disabled {
+  background: var(--color-primary-disabled);
+  border-color: var(--color-primary-disabled);
+  color: var(--color-white);
+  cursor: not-allowed;
+}
+
+/* Pixel-aesthetic accent strip */
+.header::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 4px;
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--color-primary) 0,
+    var(--color-primary) 8px,
+    var(--color-accent) 8px,
+    var(--color-accent) 16px,
+    var(--color-secondary) 16px,
+    var(--color-secondary) 24px
+  );
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0.75rem 1.25rem;
+  }
+
+  .header .logo {
+    height: 50px;
+  }
+
+  .header__nav {
+    gap: 0.75rem;
+  }
+
+  .header__nav a {
+    font-size: 0.85rem;
+    padding: 0.35rem 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 0.5rem 1rem;
+  }
+
+  .header .logo {
+    height: 44px;
+    min-height: 44px;
+  }
+}
