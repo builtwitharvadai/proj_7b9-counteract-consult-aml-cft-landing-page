@@ -2,12 +2,7 @@
 
 import type { CSSProperties } from 'react';
 
-import { OptimizedImage } from '../ui/OptimizedImage';
-import { ParticleBackground } from './ParticleBackground';
-
 export interface EnhancedHeroProps {
-  backgroundImage?: string;
-  backgroundAlt?: string;
   headline?: string;
   subheadline?: string;
   primaryCtaLabel?: string;
@@ -20,10 +15,6 @@ export interface EnhancedHeroProps {
 const DEFAULT_HEADLINE = 'Compliance is our priority. Trust is our promise.';
 const DEFAULT_SUBHEADLINE =
   'World-class AML/CFT expertise for financial institutions — combining deep regulatory knowledge, cutting-edge technology, and unwavering integrity to fortify your defenses against financial crime.';
-const DEFAULT_BACKGROUND_IMAGE =
-  'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2400&q=80';
-const DEFAULT_BACKGROUND_ALT =
-  'Modern financial district skyline representing institutional compliance and trust';
 
 const STAGGER_KEYFRAMES = `
 @keyframes counteract-hero-fade-in {
@@ -78,8 +69,6 @@ function StaggerItem({
 }
 
 export function EnhancedHero({
-  backgroundImage = DEFAULT_BACKGROUND_IMAGE,
-  backgroundAlt = DEFAULT_BACKGROUND_ALT,
   headline = DEFAULT_HEADLINE,
   subheadline = DEFAULT_SUBHEADLINE,
   primaryCtaLabel = 'Get Started',
@@ -89,48 +78,14 @@ export function EnhancedHero({
   className,
 }: EnhancedHeroProps): JSX.Element {
   const sectionClasses = cx(
-    'relative isolate flex w-full items-center overflow-hidden bg-matrix-black',
+    'relative isolate z-10 flex w-full items-center overflow-hidden',
     'min-h-[60vh] sm:min-h-[75vh] lg:min-h-screen',
     className,
   );
 
-  const overlayGradient =
-    'linear-gradient(180deg, rgba(19,19,19,0.92) 0%, rgba(26,11,104,0.55) 42%, rgba(19,19,19,0.50) 72%, rgba(19,19,19,0.28) 100%)';
-
   return (
-    <section
-      aria-labelledby="hero-heading"
-      className={sectionClasses}
-    >
+    <section aria-labelledby="hero-heading" className={sectionClasses}>
       <style>{STAGGER_KEYFRAMES}</style>
-
-      <div className="absolute inset-0 z-0" aria-hidden="true">
-        <OptimizedImage
-          src={backgroundImage}
-          alt={backgroundAlt}
-          aspectRatio="16:9"
-          priority
-          fill
-          sizes="100vw"
-          wrapperClassName="absolute inset-0 h-full w-full aspect-auto"
-          className="h-full w-full object-cover"
-        />
-      </div>
-
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-10"
-        style={{ backgroundImage: overlayGradient }}
-      />
-
-      {/* 60° brand angle device */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-16 top-0 z-10 h-[55%] w-[38%] bg-brand-blue/15"
-        style={{ clipPath: 'polygon(40% 0, 100% 0, 100% 100%, 0 100%)' }}
-      />
-
-      <ParticleBackground className="z-20" />
 
       <div className="relative z-30 mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-28">
         <div className="max-w-3xl">
@@ -160,13 +115,13 @@ export function EnhancedHero({
             <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
               <a
                 href={primaryCtaHref}
-                className="pixel-border inline-flex items-center justify-center border-cyber-green bg-cyber-green px-6 py-3 font-heading text-sm font-semibold uppercase tracking-widest text-matrix-black transition-transform duration-150 ease-out hover:-translate-y-0.5 hover:bg-cyber-green/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue"
+                className="pixel-border inline-flex items-center justify-center border-brand-blue bg-brand-blue px-6 py-3 font-heading text-sm font-semibold uppercase tracking-widest text-white transition-transform duration-150 ease-out hover:-translate-y-0.5 hover:bg-brand-blue/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-light"
               >
                 {primaryCtaLabel}
               </a>
               <a
                 href={secondaryCtaHref}
-                className="pixel-border inline-flex items-center justify-center border-brand-light bg-transparent px-6 py-3 font-heading text-sm font-semibold uppercase tracking-widest text-brand-light transition-transform duration-150 ease-out hover:-translate-y-0.5 hover:border-cyber-green hover:bg-cyber-green/10 hover:text-cyber-green focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue"
+                className="pixel-border inline-flex items-center justify-center border-brand-light bg-transparent px-6 py-3 font-heading text-sm font-semibold uppercase tracking-widest text-brand-light transition-transform duration-150 ease-out hover:-translate-y-0.5 hover:border-brand-blue hover:bg-brand-blue/10 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue"
               >
                 {secondaryCtaLabel}
               </a>

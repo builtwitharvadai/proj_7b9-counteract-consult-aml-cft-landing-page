@@ -41,7 +41,7 @@ export function ImageSkeleton({
 
   const shimmerStyle: CSSProperties = {
     backgroundImage:
-      'linear-gradient(90deg, rgba(19,19,19,0) 0%, rgba(0,253,0,0.18) 45%, rgba(0,253,0,0.35) 50%, rgba(0,253,0,0.18) 55%, rgba(19,19,19,0) 100%)',
+      'linear-gradient(90deg, rgba(19,19,19,0) 0%, rgba(44,62,248,0.18) 45%, rgba(44,62,248,0.35) 50%, rgba(44,62,248,0.18) 55%, rgba(19,19,19,0) 100%)',
     backgroundSize: '200% 100%',
   };
 
@@ -65,7 +65,7 @@ export function ImageSkeleton({
         className="pointer-events-none absolute inset-0 opacity-25"
         style={{
           backgroundImage:
-            'repeating-linear-gradient(0deg, rgba(0,253,0,0.08) 0 2px, transparent 2px 4px), repeating-linear-gradient(90deg, rgba(0,253,0,0.08) 0 2px, transparent 2px 4px)',
+            'repeating-linear-gradient(0deg, rgba(44,62,248,0.08) 0 2px, transparent 2px 4px), repeating-linear-gradient(90deg, rgba(44,62,248,0.08) 0 2px, transparent 2px 4px)',
         }}
       />
 

@@ -367,7 +367,7 @@ p {
 .hero .btn-primary:focus-visible {
   transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(44, 62, 248, 0.3);
-  background: #4655fa;
+  background: var(--color-light-blue);
   color: var(--color-white);
 }
 
@@ -1082,7 +1082,7 @@ p {
 }
 
 .submit-btn:hover:not(.loading):not(.success):not(.error):not([disabled]) {
-  background: #4655fa;
+  background: var(--color-light-blue);
 }
 
 .submit-btn.loading {

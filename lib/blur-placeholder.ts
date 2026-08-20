@@ -6,10 +6,10 @@
  */
 
 const BRAND = {
-  matrixBlack: '#0A0F0D',
-  cyberGreenDark: '#0B3B2E',
-  cyberGreen: '#00FF9C',
-  scanline: 'rgba(0, 255, 156, 0.18)',
+  matrixBlack: '#131313',
+  cyberGreenDark: '#1A0B68',
+  cyberGreen: '#2C3EF8',
+  scanline: 'rgba(171, 178, 252, 0.18)',
 } as const;
 
 /**

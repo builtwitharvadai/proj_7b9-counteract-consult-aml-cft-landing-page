@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from 'react';
 
 import { CORE_VALUES, MISSION_STATEMENT } from '../../data/team-members';
 import { ParallaxBackground } from './ParallaxBackground';
-import { TeamGrid } from './TeamGrid';
 
 export interface AboutSectionProps {
   className?: string;
@@ -72,11 +71,11 @@ function ValuePixelIcon(): JSX.Element {
       className="h-8 w-8 flex-shrink-0"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <rect x="2" y="2" width="4" height="4" fill="#00ff41" />
-      <rect x="10" y="2" width="4" height="4" fill="#00ff41" opacity="0.7" />
-      <rect x="6" y="6" width="4" height="4" fill="#00ff41" />
-      <rect x="2" y="10" width="4" height="4" fill="#00ff41" opacity="0.6" />
-      <rect x="10" y="10" width="4" height="4" fill="#00ff41" />
+      <rect x="2" y="2" width="4" height="4" fill="#2C3EF8" />
+      <rect x="10" y="2" width="4" height="4" fill="#2C3EF8" opacity="0.7" />
+      <rect x="6" y="6" width="4" height="4" fill="#2C3EF8" />
+      <rect x="2" y="10" width="4" height="4" fill="#2C3EF8" opacity="0.6" />
+      <rect x="10" y="10" width="4" height="4" fill="#2C3EF8" />
     </svg>
   );
 }
@@ -86,7 +85,7 @@ export function AboutSection({
   id = 'about',
 }: AboutSectionProps): JSX.Element {
   const sectionClass = [
-    'relative w-full overflow-hidden bg-matrix-black py-20 sm:py-24 lg:py-28',
+    'relative z-10 w-full overflow-hidden py-20 sm:py-24 lg:py-28',
     className,
   ]
     .filter(Boolean)
@@ -99,7 +98,7 @@ export function AboutSection({
       className={sectionClass}
       style={{
         backgroundImage:
-          'linear-gradient(rgba(0,255,65,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,65,0.03) 1px, transparent 1px)',
+          'linear-gradient(rgba(44,62,248,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(44,62,248,0.05) 1px, transparent 1px)',
         backgroundSize: '32px 32px',
       }}
     >
@@ -122,7 +121,7 @@ export function AboutSection({
               className="mx-auto mt-4 h-1 w-24"
               style={{
                 backgroundImage:
-                  'linear-gradient(90deg, #00FD00 0 8px, transparent 8px 12px)',
+                  'linear-gradient(90deg, #2C3EF8 0 8px, transparent 8px 12px)',
                 backgroundSize: '12px 4px',
                 backgroundRepeat: 'repeat-x',
               }}
@@ -132,11 +131,11 @@ export function AboutSection({
 
         <FadeIn delayMs={100} className="mx-auto mb-20 max-w-3xl">
           <p className="text-center font-body text-base sm:text-lg lg:text-xl leading-relaxed text-gray-200">
-            <span className="text-cyber-green">&gt;</span> {MISSION_STATEMENT}
+            <span className="text-brand-blue">&gt;</span> {MISSION_STATEMENT}
           </p>
         </FadeIn>
 
-        <FadeIn delayMs={150} className="mb-20">
+        <FadeIn delayMs={150}>
           <h3 className="mb-8 text-center font-heading text-xl sm:text-2xl uppercase tracking-widest text-white">
             Core Values
           </h3>
@@ -147,10 +146,10 @@ export function AboutSection({
                 delayMs={200 + index * 100}
                 className="h-full"
               >
-                <article className="flex h-full items-start gap-4 bg-matrix-black/60 p-6 pixel-border border-cyber-green/50 transition-transform duration-300 hover:-translate-y-1">
+                <article className="flex h-full items-start gap-4 bg-matrix-black/60 p-6 pixel-border border-brand-blue/50 transition-transform duration-300 hover:-translate-y-1">
                   <ValuePixelIcon />
                   <div>
-                    <h4 className="mb-2 font-mono text-lg uppercase tracking-widest text-cyber-green">
+                    <h4 className="mb-2 font-mono text-lg uppercase tracking-widest text-brand-light">
                       {value.title}
                     </h4>
                     <p className="text-sm leading-relaxed text-gray-300">
@@ -162,20 +161,6 @@ export function AboutSection({
             ))}
           </div>
         </FadeIn>
-
-        <FadeIn delayMs={100}>
-          <header className="mb-10 text-center">
-            <h3 className="font-mono text-2xl sm:text-3xl leading-tight text-white">
-              Meet the Team
-            </h3>
-            <p className="mx-auto mt-3 max-w-2xl text-sm sm:text-base leading-relaxed text-gray-300">
-              Compliance leaders, investigators, and technologists who&apos;ve
-              built the AML/CFT programs regulators trust.
-            </p>
-          </header>
-        </FadeIn>
-
-        <TeamGrid />
       </div>
     </section>
   );

@@ -146,7 +146,7 @@ export function ParticleBackground({
           bottom: `-${particle.size * 2}px`,
           width: `${particle.size}px`,
           height: `${particle.size}px`,
-          backgroundColor: '#00FD00',
+          backgroundColor: '#2C3EF8',
           opacity: 0,
           willChange: 'transform, opacity',
           animationName: 'counteract-particle-float',
@@ -154,7 +154,7 @@ export function ParticleBackground({
           animationDelay: `${particle.delay}s`,
           animationTimingFunction: 'linear',
           animationIterationCount: 'infinite',
-          boxShadow: '0 0 4px rgba(0, 253, 0, 0.6)',
+          boxShadow: '0 0 4px rgba(44, 62, 248, 0.6)',
           ['--particle-opacity' as string]: particle.opacity.toFixed(2),
           ['--particle-drift' as string]: `${particle.drift.toFixed(2)}px`,
         };

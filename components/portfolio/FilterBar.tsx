@@ -97,10 +97,10 @@ export function FilterBar({
             className={cx(
               'pixel-border font-mono text-xs sm:text-sm uppercase tracking-widest',
               'px-4 py-2 sm:px-5 sm:py-2.5 transition-colors duration-200 ease-out',
-              'focus:outline-none focus-visible:ring-2 focus-visible:ring-cyber-green focus-visible:ring-offset-2 focus-visible:ring-offset-matrix-black',
+              'focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 focus-visible:ring-offset-matrix-black',
               isActive
-                ? 'bg-cyber-green/20 text-cyber-green border-cyber-green shadow-[0_0_0_2px_theme(colors.cyber-green)]'
-                : 'bg-matrix-black/60 text-gray-200 border-gray-600 hover:text-cyber-green hover:border-cyber-green',
+                ? 'bg-brand-blue/20 text-brand-light border-brand-blue shadow-[0_0_0_2px_theme(colors.brand.blue)]'
+                : 'bg-matrix-black/60 text-brand-light/80 border-brand-light/40 hover:text-brand-light hover:border-brand-blue',
             )}
           >
             {option.label}

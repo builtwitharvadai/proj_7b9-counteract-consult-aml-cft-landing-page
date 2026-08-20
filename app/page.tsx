@@ -1,19 +1,22 @@
 import { AboutSection } from '../components/about/AboutSection';
 import { EnhancedHero } from '../components/hero/EnhancedHero';
+import { SiteBackground } from '../components/hero/SiteBackground';
 import { PortfolioGallery } from '../components/portfolio/PortfolioGallery';
 
 export default function HomePage(): JSX.Element {
   return (
-    <main className="min-h-screen bg-matrix-black text-white">
+    <main className="relative min-h-screen text-white">
+      <SiteBackground />
+
       <EnhancedHero />
 
       <section
         id="portfolio"
         aria-labelledby="portfolio-heading"
-        className="relative w-full bg-matrix-black py-20 sm:py-24 lg:py-28"
+        className="relative z-10 w-full py-20 sm:py-24 lg:py-28"
         style={{
           backgroundImage:
-            'linear-gradient(rgba(0,255,65,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,65,0.04) 1px, transparent 1px)',
+            'linear-gradient(rgba(44,62,248,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(44,62,248,0.06) 1px, transparent 1px)',
           backgroundSize: '32px 32px',
         }}
       >
@@ -40,7 +43,7 @@ export default function HomePage(): JSX.Element {
         </div>
       </section>
 
-      <AboutSection className="bg-black" />
+      <AboutSection />
     </main>
   );
 }

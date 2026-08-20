@@ -55,8 +55,8 @@ export const CDN_DOMAINS: readonly string[] = [
  */
 const BRAND_COLORS = {
   matrixBlack: '#131313',
-  cyberGreenDark: '#0B3B2E',
-  cyberGreen: '#00FD00',
+  cyberGreenDark: '#1A0B68',
+  cyberGreen: '#2C3EF8',
 } as const;
 
 const toBase64 = (value: string): string =>

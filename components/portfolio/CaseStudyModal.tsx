@@ -158,7 +158,7 @@ export function CaseStudyModal({
                       'font-mono text-2xl sm:text-3xl leading-tight text-white',
                       'inline-block pb-2 border-b-2 border-cyber-green',
                     )}
-                    style={{ borderImage: 'repeating-linear-gradient(90deg, #00ff41 0 6px, transparent 6px 10px) 1' }}
+                    style={{ borderImage: 'repeating-linear-gradient(90deg, #2C3EF8 0 6px, transparent 6px 10px) 1' }}
                   >
                     {caseStudy.title}
                   </h2>

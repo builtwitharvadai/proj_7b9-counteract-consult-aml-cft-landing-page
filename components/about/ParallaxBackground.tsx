@@ -133,7 +133,7 @@ export function ParallaxBackground({
           className="absolute inset-0 opacity-20"
           style={{
             backgroundImage:
-              'linear-gradient(rgba(0,255,65,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,65,0.12) 1px, transparent 1px)',
+              'linear-gradient(rgba(44,62,248),0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(44,62,248),0.12) 1px, transparent 1px)',
             backgroundSize: '48px 48px',
           }}
         />
@@ -141,7 +141,7 @@ export function ParallaxBackground({
           className="absolute inset-0 opacity-30"
           style={{
             backgroundImage:
-              'radial-gradient(circle at 20% 30%, rgba(0,255,65,0.08) 0px, transparent 40%), radial-gradient(circle at 80% 70%, rgba(0,255,65,0.05) 0px, transparent 45%)',
+              'radial-gradient(circle at 20% 30%, rgba(44,62,248),0.08) 0px, transparent 40%), radial-gradient(circle at 80% 70%, rgba(44,62,248),0.05) 0px, transparent 45%)',
           }}
         />
         <svg
@@ -150,11 +150,11 @@ export function ParallaxBackground({
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <rect x="0" y="0" width="8" height="8" fill="rgba(0,255,65,0.6)" />
-          <rect x="12" y="4" width="6" height="6" fill="rgba(0,255,65,0.35)" />
-          <rect x="22" y="10" width="8" height="8" fill="rgba(0,255,65,0.5)" />
-          <rect x="4" y="20" width="6" height="6" fill="rgba(0,255,65,0.4)" />
-          <rect x="18" y="22" width="10" height="10" fill="rgba(0,255,65,0.25)" />
+          <rect x="0" y="0" width="8" height="8" fill="rgba(44,62,248),0.6)" />
+          <rect x="12" y="4" width="6" height="6" fill="rgba(44,62,248),0.35)" />
+          <rect x="22" y="10" width="8" height="8" fill="rgba(44,62,248),0.5)" />
+          <rect x="4" y="20" width="6" height="6" fill="rgba(44,62,248),0.4)" />
+          <rect x="18" y="22" width="10" height="10" fill="rgba(44,62,248),0.25)" />
         </svg>
         <svg
           className="absolute right-[10%] bottom-[18%] h-32 w-32 opacity-25"
@@ -162,11 +162,11 @@ export function ParallaxBackground({
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <rect x="0" y="0" width="10" height="10" fill="rgba(0,255,65,0.35)" />
-          <rect x="14" y="6" width="8" height="8" fill="rgba(0,255,65,0.5)" />
-          <rect x="26" y="0" width="6" height="6" fill="rgba(0,255,65,0.4)" />
-          <rect x="6" y="20" width="12" height="12" fill="rgba(0,255,65,0.2)" />
-          <rect x="24" y="24" width="10" height="10" fill="rgba(0,255,65,0.45)" />
+          <rect x="0" y="0" width="10" height="10" fill="rgba(44,62,248),0.35)" />
+          <rect x="14" y="6" width="8" height="8" fill="rgba(44,62,248),0.5)" />
+          <rect x="26" y="0" width="6" height="6" fill="rgba(44,62,248),0.4)" />
+          <rect x="6" y="20" width="12" height="12" fill="rgba(44,62,248),0.2)" />
+          <rect x="24" y="24" width="10" height="10" fill="rgba(44,62,248),0.45)" />
         </svg>
       </div>
     </div>

@@ -15,7 +15,7 @@ const cx = (
 ): string => classes.filter(Boolean).join(' ');
 
 const SUBTLE_OVERLAY_GRADIENT =
-  'linear-gradient(135deg, rgba(19,19,19,0.55) 0%, rgba(19,19,19,0.20) 55%, rgba(0,253,0,0.10) 100%)';
+  'linear-gradient(135deg, rgba(19,19,19,0.55) 0%, rgba(19,19,19,0.20) 55%, rgba(44,62,248,0.18) 100%)';
 
 export function ServiceCard({
   service,

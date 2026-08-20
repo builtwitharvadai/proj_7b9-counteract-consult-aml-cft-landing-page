@@ -1,5 +1,14 @@
 import type { Config } from 'tailwindcss';
 
+/**
+ * Brand Manual V1 blues (and related palette):
+ * Primary Blue  #2C3EF8
+ * Light Blue    #ABB2FC
+ * Dark Purple   #1A0B68
+ * Off-White     #F7F7FF
+ * Black         #131313
+ * White         #FFFFFF
+ */
 const config: Config = {
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}',
@@ -8,15 +17,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        /* Brand Manual V1 */
         'matrix-black': '#131313',
-        'matrix-gray': '#8B958F',
-        'cyber-green': '#00FD00',
+        'matrix-gray': '#ABB2FC',
+        'cyber-green': '#2C3EF8',
         brand: {
           blue: '#2C3EF8',
           light: '#ABB2FC',
           purple: '#1A0B68',
-          soft: '#99FE99',
           paper: '#F7F7FF',
         },
       },
