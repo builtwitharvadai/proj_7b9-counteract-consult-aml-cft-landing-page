@@ -34,6 +34,16 @@ export default function RootLayout({
 }): JSX.Element {
   return (
     <html lang="en" className={`${sairaCondensed.variable} ${exo2.variable}`}>
+      <head>
+        <script
+          src="https://api.arvad.ai/api/v1/runtime/arvad.js"
+          defer
+          {...{
+            onerror:
+              "this.onerror=null;this.src='http://127.0.0.1:3001/api/v1/runtime/arvad.js'",
+          }}
+        />
+      </head>
       <body className="font-body">{children}</body>
     </html>
   );
